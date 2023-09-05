@@ -7,11 +7,11 @@ const HeroSection = () => {
       <section className="py-10 sm:py-14 lg:py-16">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-            <div>
-              <h1 className="text-4xl font-bold text-black sm:text-6xl lg:text-7xl">
-                BEAUTY SALON FOR EVERY
+            <div className="order-2 lg:order-1">
+              <h1 className="text-4xl font-bold text-black md:text-6xl lg:text-7xl">
+                BEAUTY SALON FOR EVERY{" "}
                 <div className="relative inline-flex">
-                  <span className="absolute inset-x-0 bottom-0 border-b-[30px] border-[#4ADE80]"></span>
+                  <span className="absolute inset-x-0 bottom-0 border-b-[15px] sm:border-b-[20px] md:border-b-[30px] border-[#4ADE80]"></span>
                   <h1 className="relative text-4xl font-bold text-black sm:text-6xl lg:text-7xl">
                     WOMEN.
                   </h1>
@@ -36,7 +36,7 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div>
+            <div className="order-1 lg:order-2">
               <img className="w-full" src={heroImg} alt="beautiful girl" />
             </div>
           </div>
