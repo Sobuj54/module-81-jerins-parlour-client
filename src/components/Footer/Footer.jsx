@@ -1,17 +1,21 @@
 import logo from "../../assets/logo.png";
+import locationIcon from "../../assets/icons/icons8-location-100.png";
 
 const Footer = () => {
   return (
     <section className="py-10 bg-gradient-to-b from-green-200 to-green-300 sm:pt-16 lg:pt-24">
-      <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-y-12 gap-x-8 xl:gap-x-12">
+      <div className="px-6 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-y-12 gap-x-0 md:gap-x-8 xl:gap-x-12">
           <div className="col-span-2 md:col-span-4 xl:pr-8">
-            <img className="w-auto h-14" src={logo} alt="" />
+            <img className="w-auto h-14 mx-auto md:mx-0" src={logo} alt="" />
 
-            <p className="text-base leading-relaxed text-gray-600 mt-7">
-              H#000 (0th Floor), Road #00, New DOHS, Mohakhali, Dhaka,
-              Bangladesh
-            </p>
+            <div className="flex items-center justify-center gap-3 mt-10 md:my-10 ">
+              <img src={locationIcon} alt="location icon" className="w-7 h-7" />
+              <p className="text-base leading-relaxed text-gray-600">
+                H#000 (0th Floor), Road #00, New DOHS, Mohakhali, Dhaka,
+                Bangladesh
+              </p>
+            </div>
           </div>
 
           <div className="lg:col-span-2">
@@ -55,98 +59,6 @@ const Footer = () => {
                   className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600">
                   {" "}
                   Career{" "}
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="lg:col-span-2">
-            <p className="text-base font-semibold text-gray-900">Help</p>
-
-            <ul className="mt-6 space-y-4">
-              <li>
-                <a
-                  href="#"
-                  title=""
-                  className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600">
-                  {" "}
-                  Customer Support{" "}
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  title=""
-                  className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600">
-                  {" "}
-                  Delivery Details{" "}
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  title=""
-                  className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600">
-                  {" "}
-                  Terms & Conditions{" "}
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  title=""
-                  className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600">
-                  {" "}
-                  Privacy Policy{" "}
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="lg:col-span-2">
-            <p className="text-base font-semibold text-gray-900">Resources</p>
-
-            <ul className="mt-6 space-y-5">
-              <li>
-                <a
-                  href="#"
-                  title=""
-                  className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600">
-                  {" "}
-                  Free eBooks{" "}
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  title=""
-                  className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600">
-                  {" "}
-                  Development Tutorial{" "}
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  title=""
-                  className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600">
-                  {" "}
-                  How to - Blog{" "}
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  title=""
-                  className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600">
-                  {" "}
-                  YouTube Playlist{" "}
                 </a>
               </li>
             </ul>
@@ -197,21 +109,36 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
+          <div className="col-span-2 lg:col-span-4">
+            <h5 className="text-base font-semibold text-gray-900">About us</h5>
+
+            <p className="text-sm text-gray-800 mt-6">
+              Jerins Parlour is your destination for beauty and self-care. Our
+              team of expert professionals is dedicated to enhancing your
+              natural radiance through a range of services, from hairstyling to
+              skincare. With a commitment to quality, we create a welcoming and
+              eco-conscious environment where you can indulge in self-pampering.
+              Join us for an unforgettable beauty experience. Contact us today
+              to schedule your appointment and discover your true beauty
+              potential.
+            </p>
+          </div>
         </div>
 
         <hr className="mt-16 mb-10 border-gray-200" />
 
         <div className="sm:flex sm:items-center sm:justify-between">
           <p className="text-sm text-gray-600">
-            © Copyright 2021, All Rights Reserved by Postcraft
+            © Copyright 2021, All Rights Reserved by JerinsParlour
           </p>
 
-          <ul className="flex items-center mt-5 space-x-3 md:order-3 sm:mt-0">
+          <ul className="flex items-center justify-center md:justify-normal mt-5 space-x-3 md:order-3 sm:mt-0">
             <li>
               <a
                 href="#"
                 title=""
-                className="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-orange-600 hover:text-white focus:text-white hover:bg-orange-600 hover:border-orange-600 focus:border-orange-600">
+                className="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border-gray-100 rounded-full w-7 h-7 focus:bg-orange-600 hover:text-white focus:text-white hover:bg-orange-600 hover:border-orange-600 focus:border-orange-600">
                 <svg
                   className="w-4 h-4"
                   xmlns="http://www.w3.org/2000/svg"

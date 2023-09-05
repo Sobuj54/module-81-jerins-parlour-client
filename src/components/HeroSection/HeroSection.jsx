@@ -4,7 +4,7 @@ import heroImg from "../../assets/images/beautiful-young-asian-woman-touching-he
 const HeroSection = () => {
   return (
     <div className="bg-gradient-to-b from-green-50 to-green-100">
-      <section className="py-10 sm:py-14 lg:py-16">
+      <section className="py-10 sm:py-14 lg:py-20">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <div className="order-2 lg:order-1">
