@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "img": "https://example.com/salon1.jpg",
+        "title": "Haircut and Styling",
+        "price": "50.00",
+        "description": "Get a trendy haircut and professional styling to enhance your look."
+      },
+      {
+        "id": 2,
+        "img": "https://example.com/salon2.jpg",
+        "title": "Manicure and Pedicure",
+        "price": "35.00",
+        "description": "Pamper your nails with a relaxing manicure and pedicure session."
+      },
+      {
+        "id": 3,
+        "img": "https://example.com/salon3.jpg",
+        "title": "Facial Spa",
+        "price": "60.00",
+        "description": "Indulge in a rejuvenating facial spa treatment to revitalize your skin."
+      },
+      {
+        "id": 4,
+        "img": "https://example.com/salon4.jpg",
+        "title": "Massage Therapy",
+        "price": "75.00",
+        "description": "Relieve stress and tension with a therapeutic massage session."
+      },
+      {
+        "id": 5,
+        "img": "https://example.com/salon5.jpg",
+        "title": "Nail Art",
+        "price": "40.00",
+        "description": "Get creative with stunning nail art designs."
+      },
+      {
+        "id": 6,
+        "img": "https://example.com/salon6.jpg",
+        "title": "Makeup Application",
+        "price": "55.00",
+        "description": "Enhance your beauty with professional makeup application."
+      },
+      {
+        "id": 7,
+        "img": "https://example.com/salon7.jpg",
+        "title": "Eyebrow Shaping",
+        "price": "25.00",
+        "description": "Achieve perfectly shaped eyebrows with our expert services."
+      },
+      {
+        "id": 8,
+        "img": "https://example.com/salon8.jpg",
+        "title": "Hair Coloring",
+        "price": "70.00",
+        "description": "Transform your hair with a beautiful new color."
+      },
+      {
+        "id": 9,
+        "img": "https://example.com/salon9.jpg",
+        "title": "Waxing Services",
+        "price": "45.00",
+        "description": "Experience smooth and hair-free skin with our waxing services."
+      },
+      {
+        "id": 10,
+        "img": "https://example.com/salon10.jpg",
+        "title": "Bridal Package",
+        "price": "150.00",
+        "description": "Look stunning on your special day with our bridal package."
+      },
+      {
+        "id": 11,
+        "img": "https://example.com/salon11.jpg",
+        "title": "Hair Extensions",
+        "price": "85.00",
+        "description": "Add length and volume to your hair with quality extensions."
+      },
+      {
+        "id": 12,
+        "img": "https://example.com/salon12.jpg",
+        "title": "Skin Rejuvenation",
+        "price": "90.00",
+        "description": "Revive your skin's natural radiance with our rejuvenation treatments."
+      }
+]
