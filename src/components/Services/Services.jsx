@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const SampleServices = () => {
+const Services = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
@@ -10,22 +10,20 @@ const SampleServices = () => {
       .then((data) => setServices(data));
   }, []);
 
-  const demoServices = services.slice(0, 3);
-
   return (
     <section className="py-10 bg-white sm:py-16 lg:py-24">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
-            Our Awesome Services
+            All Of Our Services
           </h2>
         </div>
 
-        <div className="grid max-w-md grid-cols-1 gap-6 mx-auto mt-8 text-center lg:max-w-full lg:mt-16 lg:grid-cols-3">
-          {demoServices.map((service) => (
+        <div className="grid max-w-md grid-cols-1 gap-12 lg:gap-8 mx-auto mt-8 text-center lg:max-w-full lg:mt-16 lg:grid-cols-3">
+          {services.map((service) => (
             <div
               key={service.id}
-              className="overflow-hidden bg-green-50 border-2 border-green-100 shadow-lg shadow-green-300 rounded-md">
+              className="overflow-hidden bg-green-50 border-2 border-green-200  rounded-md shadow-xl shadow-green-300">
               <div className="p-6 xl:px-6">
                 <img
                   src={service.img}
@@ -53,16 +51,9 @@ const SampleServices = () => {
             </div>
           ))}
         </div>
-        <Link
-          to="/services"
-          className="flex items-center justify-center w-9/12 md:w-3/12 mx-auto px-10 py-4 mt-6 md:mt-12 mb-8 text-base font-semibold text-white transition-all duration-200 bg-gradient-to-r from-green-500 to-blue-500 rounded-md hover:from-blue-500 hover:to-green-500"
-          role="button">
-          {" "}
-          Explore More{" "}
-        </Link>
       </div>
     </section>
   );
 };
 
-export default SampleServices;
+export default Services;

@@ -70,13 +70,12 @@ const NavBar = () => {
             </NavLink>
 
             <NavLink
-              to="https://sobuj-55.vercel.app/"
-              target="_blank"
+              to="/services"
               className={`text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
                 isActive,
               }) => (isActive ? "active" : "")}`}>
               {" "}
-              Our Portfolio{" "}
+              Services{" "}
             </NavLink>
 
             <NavLink
@@ -127,14 +126,13 @@ const NavBar = () => {
             </NavLink>
 
             <NavLink
-              to="https://sobuj-55.vercel.app/"
+              to="/services"
               onClick={() => setIsOpen(!isOpen)}
-              target="_blank"
               className={`text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
                 isActive,
               }) => (isActive ? "active" : "")}`}>
               {" "}
-              Our Portfolio{" "}
+              Services{" "}
             </NavLink>
 
             <NavLink
