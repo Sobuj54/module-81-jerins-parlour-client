@@ -7,6 +7,14 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper/modules";
+import { Rating, Star } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
+
+const myStyles = {
+  itemShapes: Star,
+  activeFillColor: "#ffb700",
+  inactiveFillColor: "#fbf1a9",
+};
 
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
@@ -18,19 +26,35 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="my-24">
-      <h2 className="text-6xl font-bold text-center">Testimonials</h2>
+    <section className="my-16 md:my-24 px-3 md:px-10">
+      <h2 className="text-4xl md:text-6xl font-bold text-center">
+        Testimonials
+      </h2>
       <Swiper
-        slidesPerView={3}
+        slidesPerView={1}
         spaceBetween={30}
         pagination={{
           clickable: true,
+        }}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
         }}
         modules={[Pagination]}
         className="mySwiper">
         {testimonials.map((testimonial) => (
           <SwiperSlide key={testimonial.id}>
-            <div className="p-5 mt-16 mb-10">
+            <div className="p-5 mt-10 md:mt-16 mb-5 md:mb-10 flex flex-col h-auto justify-between">
               <div className="flex items-center mb-5">
                 <img
                   src={testimonial.img}
@@ -38,13 +62,21 @@ const Testimonials = () => {
                   className="h-14 w-14 rounded-full"
                 />
                 <div className="ml-6">
-                  <h3 className="text-2xl font-bold">{testimonial.name}</h3>
-                  <h4 className="text-lg font-semibold">
+                  <h3 className="text-xl md:text-2xl font-bold">
+                    {testimonial.name}
+                  </h3>
+                  <h4 className="text-base md:text-lg font-semibold">
                     {testimonial.profession}
                   </h4>
                 </div>
               </div>
-              <p>{testimonial.comment}</p>
+              <p className="text-sm md:text-base">{testimonial.comment}</p>
+              <Rating
+                className="mt-6"
+                style={{ maxWidth: 200 }}
+                value={testimonial.rating}
+                itemStyles={myStyles}
+              />
             </div>
           </SwiperSlide>
         ))}
