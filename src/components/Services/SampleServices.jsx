@@ -21,7 +21,7 @@ const SampleServices = () => {
           </h2>
         </div>
 
-        <div className="grid max-w-md grid-cols-1 gap-6 mx-auto mt-8 text-center lg:max-w-full lg:mt-16 lg:grid-cols-3">
+        <div className="grid max-w-md grid-cols-1 gap-10 mx-auto mt-8 text-center lg:max-w-full lg:mt-16 lg:grid-cols-3">
           {demoServices.map((service) => (
             <div
               key={service.id}
@@ -55,7 +55,7 @@ const SampleServices = () => {
         </div>
         <Link
           to="/services"
-          className="flex items-center justify-center w-9/12 md:w-3/12 mx-auto px-10 py-4 mt-6 md:mt-12 mb-8 text-base font-semibold text-white transition-all duration-200 bg-gradient-to-r from-green-500 to-blue-500 rounded-md hover:from-blue-500 hover:to-green-500"
+          className="flex items-center justify-center w-9/12 md:w-3/12 mx-auto px-10 py-4 mt-9 md:mt-14 mb-8 text-base font-semibold text-white transition-all duration-200 bg-gradient-to-r from-green-500 to-blue-500 rounded-md hover:from-blue-500 hover:to-green-500"
           role="button">
           {" "}
           Explore More{" "}
