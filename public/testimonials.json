@@ -1,0 +1,132 @@
+ [
+      {
+        "id": 1,
+        "img": "https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg?size=626&ext=jpg",
+        "name": "Emma Smith",
+        "profession": "Accountant",
+        "comment": "I love this salon! The staff is incredibly talented and friendly. I always leave feeling pampered and beautiful. Highly recommended! The quality of service is unmatched, and the ambiance is so relaxing. I've been a loyal customer for years and will continue to be. Thank you, Emma's Beauty Salon!",
+        "rating": 5
+      },
+      {
+        "id": 2,
+        "img": "https://img.freepik.com/free-photo/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg?size=626&ext=jpg",
+        "name": "Olivia Johnson",
+        "profession": "Engineer",
+        "comment": "The hair color I got here was amazing. It completely transformed my look. The salon has a great atmosphere too! The stylists are skilled and attentive, ensuring you get the perfect shade. My friends couldn't stop complimenting my new hair. I'm thrilled with the results!",
+        "rating": 4
+      },
+      {
+        "id": 3,
+        "img": "https://img.freepik.com/free-photo/cheerful-curly-business-girl-wearing-glasses_176420-206.jpg?size=626&ext=jpg",
+        "name": "Ava Davis",
+        "profession": "Marketing Manager",
+        "comment": "I'm a regular customer here, and I'm never disappointed. The facials are my favorite, and they leave my skin feeling refreshed and radiant. The spa experience is top-notch, and the products they use are of the highest quality. I look forward to my spa days at Ava's Beauty Salon!",
+        "rating": 5
+      },
+      {
+        "id": 4,
+        "img": "https://img.freepik.com/free-photo/smiling-confident-businesswoman-posing-with-arms-folded_1262-20950.jpg?size=626&ext=jpg",
+        "name": "Sophia Taylor",
+        "profession": "Teacher",
+        "comment": "The massage therapy at this salon is top-notch. It's the best way to unwind after a long week of work. The therapists are skilled and attentive to your needs. The tranquil environment adds to the relaxation. I leave feeling completely rejuvenated. Highly recommended!",
+        "rating": 5
+      },
+      {
+        "id": 5,
+        "img": "https://img.freepik.com/free-photo/confident-business-woman-portrait-smiling-face_53876-137693.jpg?size=626&ext=jpg",
+        "name": "Lily Wilson",
+        "profession": "Graphic Designer",
+        "comment": "I always get my nails done here, and the nail artists are incredibly talented. My nails look amazing every time! The variety of designs and colors is impressive. They pay attention to detail, and the results are long-lasting. I feel confident and stylish with my beautifully designed nails!",
+        "rating": 4
+      },
+      {
+        "id": 6,
+        "img": "https://img.freepik.com/free-photo/young-beautiful-woman-casual-outfit-isolated-studio_1303-20526.jpg?size=626&ext=jpg",
+        "name": "Chloe Anderson",
+        "profession": "Chef",
+        "comment": "I needed a last-minute makeup appointment for an event, and they were able to accommodate me. The makeup artist did a fantastic job! The makeup artist worked wonders, enhancing my features without making it look overdone. I received compliments all night. Thank you, Chloe's Beauty Salon!",
+        "rating": 5
+      },
+      {
+        "id": 7,
+        "img": "https://img.freepik.com/free-photo/glamour-stylish-feminine-woman-with-long-natural-red-hair-purple-sweater-holding-hand-pocket-as-pointing-upper-left-corner-showing-place-she-does-hairstyle-makeup-violet-wall_1258-81055.jpg?size=626&ext=jpg",
+        "name": "Grace Parker",
+        "profession": "Student",
+        "comment": "I love coming here for eyebrow shaping. They always get it just right, and it makes such a difference in my look. The precision in eyebrow shaping is exceptional. It frames my face perfectly. I feel more confident and put-together after each visit!",
+        "rating": 4
+      },
+      {
+        "id": 8,
+        "img": "https://img.freepik.com/free-photo/lifestyle-beauty-fashion-people-emotions-concept-young-asian-female-office-manager-ceo-with-pleased-expression-standing-white-background-smiling-with-arms-crossed-chest_1258-59329.jpg?size=626&ext=jpg",
+        "name": "Sophie White",
+        "profession": "IT Specialist",
+        "comment": "The staff is so friendly and welcoming. It's not just a salon; it's an experience. I recommend it to everyone. The warmth and hospitality of the staff make every visit enjoyable. They make you feel like a valued guest. It's my go-to place for relaxation and self-care!",
+        "rating": 5
+      },
+      {
+        "id": 9,
+        "img": "https://img.freepik.com/free-photo/serious-young-lady_171337-1591.jpg?size=626&ext=jpg",
+        "name": "Mia Martinez",
+        "profession": "Dentist",
+        "comment": "The waxing services here are fantastic. They make it as painless as possible, and the results are great. The estheticians are skilled and professional. The waxing process is efficient and virtually pain-free. I leave with smooth and flawless skin every time!",
+        "rating": 4
+      },
+      {
+        "id": 10,
+        "img": "https://img.freepik.com/free-photo/attractive-lady-red-sweater-walks-along-avenue-with-sakura-drinks-coffee-beautiful-woman-beret-smiling-enjoying-tea-outside_197531-17871.jpg?size=626&ext=jpg",
+        "name": "Ella Lee",
+        "profession": "Lawyer",
+        "comment": "I chose the bridal package for my wedding, and I looked and felt amazing. They made my special day even more special. The bridal package is a complete package of beauty and relaxation. It left me feeling like a radiant bride on my big day. Thank you for the unforgettable experience!",
+        "rating": 5
+      },
+      {
+        "id": 11,
+        "img": "https://img.freepik.com/free-photo/close-up-portrait-smiling-attractive-woman-with-white-teeth-long-curly-hair-red-lipstick-make-up-looking-camera-isolated-wearing-white-blouse_285396-3036.jpg?size=626&ext=jpg",
+        "name": "Aria Clark",
+        "profession": "Artist",
+        "comment": "The hair extensions here are high quality and blend seamlessly with my natural hair. I get so many compliments. The hair extensions are undetectable and add volume and length effortlessly. They're a game-changer for my hair. I feel like a model every day!",
+        "rating": 4
+      },
+      {
+        "id": 12,
+        "img": "https://img.freepik.com/free-photo/beautiful-smiling-african-american-female-with-crisp-hair-broad-smile-shows-white-teeth-wears-casual-t-shirt-spectacles-stands-wall-rejoices-having-day-off-woman-journalist-indoor_273609-15511.jpg?size=626&ext=jpg",
+        "name": "Luna Harris",
+        "profession": "Doctor",
+        "comment": "The skin rejuvenation treatments have done wonders for my complexion. I look and feel younger. The rejuvenation treatments have reversed the signs of aging on my skin. I've regained my youthful glow. I'm grateful for Luna's Beauty Salon!",
+        "rating": 5
+      },
+      {
+        "id": 13,
+        "img": "https://img.freepik.com/free-photo/cheerfulcharming-young-woman-wearing-blue-sweater-with-fair-straight-hair-smiling-happily-while-receiving-some-positive-news-pretty-girl-dressed-blue-looking-with-joyful-smile_176420-13443.jpg?size=626&ext=jpg",
+        "name": "Scarlett Turner",
+        "profession": "Interior Designer",
+        "comment": "I treated myself to the pamper package, and it was pure bliss. I highly recommend it for self-care. The pamper package is the ultimate self-indulgence. It left me feeling relaxed and rejuvenated. A must-try at Scarlett's Beauty Salon!",
+        "rating": 5
+      },
+      {
+        "id": 14,
+        "img": "https://img.freepik.com/free-photo/young-attractive-emotional-girl-business-style-clothes_78826-2303.jpg?size=626&ext=jpg",
+        "name": "Hannah Rogers",
+        "profession": "Financial Analyst",
+        "comment": "The eyelash extensions look so natural and save me time on my morning routine. I'm thrilled with the results. The eyelash extensions are a game-changer. I wake up looking ready to conquer the day. Thank you for the time-saving beauty solution!",
+        "rating": 4
+      },
+      {
+        "id": 15,
+        "img": "https://img.freepik.com/free-photo/amazing-cheerful-business-woman-standing-with-arms-crossed_171337-8487.jpg?size=626&ext=jpg",
+        "name": "Zoe Turner",
+        "profession": "Interior Designer",
+        "comment": "I treated myself to the pamper package, and it was pure bliss. I highly recommend it for self-care. The pamper package is the ultimate self-indulgence. It left me feeling relaxed and rejuvenated. A must-try at Zoe's Beauty Salon!",
+        "rating": 5
+      },
+      {
+        "id": 16,
+        "img": "https://img.freepik.com/free-photo/portrait-smiling-young-girl-pointing-finger-away_171337-1619.jpg?size=626&ext=jpg",
+        "name": "Mila Wilson",
+        "profession": "HR Manager",
+        "comment": "I joined their hairstyling classes, and I've learned so much. The instructors are knowledgeable and patient. The hairstyling classes have been a great learning experience. I've gained valuable skills. It's been an enriching journey at Mila's Beauty Salon!",
+        "rating": 5
+      }
+    ]
+  
+  
