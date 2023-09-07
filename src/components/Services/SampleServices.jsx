@@ -44,7 +44,7 @@ const SampleServices = () => {
 
                 <Link
                   to="/services"
-                  className="inline-flex items-center justify-center px-6 md:px-10 py-2 md:py-4 mt-10 text-base font-semibold text-white transition-all duration-200 bg-gradient-to-r from-pink-500 to-blue-500 rounded-md hover:from-blue-500 hover:to-pink-500"
+                  className="inline-flex items-center justify-center px-8 md:px-10 py-3 md:py-4 mt-10 text-base font-semibold text-white transition-all duration-200 bg-gradient-to-r from-pink-500 to-blue-500 rounded-md hover:from-blue-500 hover:to-pink-500"
                   role="button">
                   {" "}
                   Book Service{" "}
