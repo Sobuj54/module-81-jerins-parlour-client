@@ -12,7 +12,7 @@ import { NavLink, Outlet } from "react-router-dom";
 const AdminPanel = () => {
   return (
     <div className="relative">
-      <div className="absolute bg-gradient-to-b from-green-50 to-green-100 w-2/12 h-screen">
+      <div className="absolute bg-gradient-to-b from-green-50 to-green-100 w-56 h-screen">
         <div className="w-8/12 mx-auto mt-10">
           <img src={logo} alt="logo" className="bg-cover" />
         </div>

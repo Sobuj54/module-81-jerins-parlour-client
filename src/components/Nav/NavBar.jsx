@@ -101,7 +101,7 @@ const NavBar = () => {
 
             <Link
               to="/login"
-              className={`inline-flex items-center justify-center px-5 py-2.5 text-base font-semibold text-black border-2 border-black hover:bg-black hover:text-white transition-all duration-200 focus:bg-black focus:text-white"
+              className={`inline-flex items-center justify-center px-5 py-2.5 text-base font-semibold text-black border-2 border-black hover:bg-black hover:text-white "
               role="button`}>
               {" "}
               Log in{" "}
