@@ -1,6 +1,22 @@
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import useAuthContext from "../../customHooks/useAuthContext";
 
 const SignUp = () => {
+  const { createUser } = useAuthContext();
+
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    createUser(data.email, data.password)
+      .then((User) => {
+        const newUser = User.user;
+        console.log(newUser);
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
     <section className="relative py-10 bg-gray-900 sm:py-16 lg:py-24">
       <div className="absolute inset-0">
@@ -29,7 +45,7 @@ const SignUp = () => {
               </p>
             </div>
 
-            <form action="#" method="POST" className="mt-8">
+            <form onSubmit={handleSubmit(onSubmit)} className="mt-8">
               <div className="space-y-5">
                 <div>
                   <label className="text-base font-medium text-gray-900">
@@ -39,7 +55,8 @@ const SignUp = () => {
                   <div className="mt-2.5">
                     <input
                       type="text"
-                      name=""
+                      {...register("name")}
+                      required
                       placeholder="Enter your full name"
                       className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
                     />
@@ -54,7 +71,8 @@ const SignUp = () => {
                   <div className="mt-2.5">
                     <input
                       type="email"
-                      name=""
+                      {...register("email")}
+                      required
                       placeholder="Enter email to get started"
                       className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
                     />
@@ -69,7 +87,8 @@ const SignUp = () => {
                   <div className="mt-2.5">
                     <input
                       type="password"
-                      name=""
+                      {...register("password")}
+                      required
                       placeholder="Enter your password"
                       className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
                     />
