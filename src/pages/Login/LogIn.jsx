@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const LogIn = () => {
   return (
     <section className="bg-white">
@@ -104,12 +106,11 @@ const LogIn = () => {
             </h2>
             <p className="mt-2 text-base text-gray-600">
               Don’t have an account?{" "}
-              <a
-                href="#"
-                title=""
+              <Link
+                to="/signUp"
                 className="font-medium text-blue-600 transition-all duration-200 hover:text-blue-700 focus:text-blue-700 hover:underline">
                 Create a free account
-              </a>
+              </Link>
             </p>
 
             <form action="#" method="POST" className="mt-8">
