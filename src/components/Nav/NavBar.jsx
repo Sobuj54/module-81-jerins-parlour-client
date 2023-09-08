@@ -89,12 +89,12 @@ const NavBar = () => {
             </NavLink>
 
             <NavLink
-              to="/admin"
+              to="/admin/orderList"
               className={`text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
                 isActive,
               }) => (isActive ? "active" : "")}`}>
               {" "}
-              Customer panel{" "}
+              Admin panel{" "}
             </NavLink>
 
             <div className="w-px h-5 bg-black/20"></div>
@@ -147,13 +147,13 @@ const NavBar = () => {
             </NavLink>
 
             <NavLink
-              to="/contact"
+              to="/admin/orderList"
               onClick={() => setIsOpen(!isOpen)}
               className={`text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
                 isActive,
               }) => (isActive ? "active" : "")}`}>
               {" "}
-              Customer panel{" "}
+              Admin panel{" "}
             </NavLink>
 
             <div className="w-4/5 h-px bg-black/20"></div>

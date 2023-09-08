@@ -6,6 +6,7 @@ import Services from "../Services/Services";
 import LogIn from "../../pages/Login/LogIn";
 import SignUp from "../../pages/SignUp/SignUp";
 import AdminPanel from "../../pages/Admin/AdminPanel";
+import OrderList from "../OrderList/OrderList";
 
 const Router = createBrowserRouter([
   {
@@ -35,8 +36,14 @@ const Router = createBrowserRouter([
     ],
   },
   {
-    path: "/admin",
+    path: "admin",
     element: <AdminPanel></AdminPanel>,
+    children: [
+      {
+        path: "orderList",
+        element: <OrderList></OrderList>,
+      },
+    ],
   },
 ]);
 
