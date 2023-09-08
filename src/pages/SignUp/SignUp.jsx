@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import useAuthContext from "../../customHooks/useAuthContext";
 
 const SignUp = () => {
-  const { createUser, updateUserProfile } = useAuthContext();
+  const { createUser, updateUserProfile, googleSignIn } = useAuthContext();
 
   const { register, handleSubmit } = useForm();
 
@@ -18,6 +18,15 @@ const SignUp = () => {
           .catch((error) => console.log(error));
 
         console.log(newUser);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const handleGoogleLogIn = () => {
+    googleSignIn()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
       })
       .catch((error) => console.log(error));
   };
@@ -110,6 +119,7 @@ const SignUp = () => {
 
                 <div>
                   <button
+                    onClick={handleGoogleLogIn}
                     type="button"
                     className="
                                     relative
