@@ -1,10 +1,23 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import "./NavBar.css";
 import { useState } from "react";
+import useAuthContext from "../../customHooks/useAuthContext";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const { user, logOut } = useAuthContext();
+  const navigate = useNavigate();
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        // console.log("sign out successfull");
+        navigate("/login");
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <header className="bg-gradient-to-b from-green-50 to-green-100">
@@ -99,13 +112,23 @@ const NavBar = () => {
 
             <div className="w-px h-5 bg-black/20"></div>
 
-            <Link
-              to="/login"
-              className={`inline-flex items-center justify-center px-5 py-2.5 text-base font-semibold text-black border-2 border-black hover:bg-black hover:text-white "
+            {user ? (
+              <Link
+                onClick={handleLogOut}
+                className={`inline-flex items-center justify-center px-5 py-2.5 text-base font-semibold text-black border-2 border-black hover:bg-black hover:text-white "
               role="button`}>
-              {" "}
-              Log in{" "}
-            </Link>
+                {" "}
+                Log out{" "}
+              </Link>
+            ) : (
+              <Link
+                to="/login"
+                className={`inline-flex items-center justify-center px-5 py-2.5 text-base font-semibold text-black border-2 border-black hover:bg-black hover:text-white "
+            role="button`}>
+                {" "}
+                Log in{" "}
+              </Link>
+            )}
           </div>
 
           {/* for mobile devices this will work*/}
@@ -158,14 +181,23 @@ const NavBar = () => {
 
             <div className="w-4/5 h-px bg-black/20"></div>
 
-            <Link
-              to="/login"
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center px-5 py-2.5 text-base font-semibold text-black border-2 border-black hover:bg-black hover:text-white transition-all duration-200 focus:bg-black focus:text-white"
-              role="button">
-              {" "}
-              Log in{" "}
-            </Link>
+            {user ? (
+              <Link
+                onClick={handleLogOut}
+                className={`inline-flex items-center justify-center px-5 py-2.5 text-base font-semibold text-black border-2 border-black hover:bg-black hover:text-white "
+              role="button`}>
+                {" "}
+                Log out{" "}
+              </Link>
+            ) : (
+              <Link
+                to="/login"
+                className={`inline-flex items-center justify-center px-5 py-2.5 text-base font-semibold text-black border-2 border-black hover:bg-black hover:text-white "
+            role="button`}>
+                {" "}
+                Log in{" "}
+              </Link>
+            )}
           </div>
         </div>
       </div>

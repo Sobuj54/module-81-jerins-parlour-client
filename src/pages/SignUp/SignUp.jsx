@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import useAuthContext from "../../customHooks/useAuthContext";
 
 const SignUp = () => {
-  const { createUser } = useAuthContext();
+  const { createUser, updateUserProfile } = useAuthContext();
 
   const { register, handleSubmit } = useForm();
 
@@ -12,6 +12,11 @@ const SignUp = () => {
     createUser(data.email, data.password)
       .then((User) => {
         const newUser = User.user;
+        // update user profile name
+        updateUserProfile(data.name)
+          // .then(() => console.log("user profile has been updated"))
+          .catch((error) => console.log(error));
+
         console.log(newUser);
       })
       .catch((error) => console.log(error));
