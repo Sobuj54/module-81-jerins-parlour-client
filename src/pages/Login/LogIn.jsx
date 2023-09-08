@@ -8,11 +8,11 @@ const LogIn = () => {
           <div className="absolute inset-0">
             <img
               className="object-cover object-top w-full h-full"
-              src="https://cdn.rareblocks.xyz/collection/celebration/images/signin/4/girl-thinking.jpg"
+              src="https://images.unsplash.com/photo-1546333603-2895edefc462?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyMDUyMDZ8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
               alt=""
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
 
           <div className="relative">
             <div className="w-full max-w-xl xl:w-full xl:mx-auto xl:pr-24 xl:max-w-xl">
@@ -140,7 +140,6 @@ const LogIn = () => {
                     <input
                       type="email"
                       name=""
-                      id=""
                       placeholder="Enter email to get started"
                       className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                     />
@@ -182,7 +181,6 @@ const LogIn = () => {
                     <input
                       type="password"
                       name=""
-                      id=""
                       placeholder="Enter your password"
                       className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                     />

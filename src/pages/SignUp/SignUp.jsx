@@ -6,18 +6,18 @@ const SignUp = () => {
       <div className="absolute inset-0">
         <img
           className="object-cover w-full h-full"
-          src="https://cdn.rareblocks.xyz/collection/celebration/images/signup/2/woman-working-laptop.jpg"
+          src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw5ODY5OTk1fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
           alt=""
         />
       </div>
       <div className="absolute inset-0 bg-gray-900/20"></div>
 
       <div className="relative max-w-lg px-4 mx-auto sm:px-0">
-        <div className="overflow-hidden bg-white rounded-md shadow-md">
+        <div className="overflow-hidden bg-white/50 rounded-md shadow-md">
           <div className="px-4 py-6 sm:px-8 sm:py-7">
             <div className="text-center">
               <h2 className="text-3xl font-bold text-gray-900">
-                Create an account
+                Create an Account
               </h2>
               <p className="mt-2 text-base text-gray-600">
                 Already joined?{" "}
@@ -40,7 +40,6 @@ const SignUp = () => {
                     <input
                       type="text"
                       name=""
-                      id=""
                       placeholder="Enter your full name"
                       className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
                     />
@@ -56,7 +55,6 @@ const SignUp = () => {
                     <input
                       type="email"
                       name=""
-                      id=""
                       placeholder="Enter email to get started"
                       className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
                     />
@@ -72,7 +70,6 @@ const SignUp = () => {
                     <input
                       type="password"
                       name=""
-                      id=""
                       placeholder="Enter your password"
                       className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
                     />
