@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuthContext from "../../customHooks/useAuthContext";
 import { useForm } from "react-hook-form";
 
@@ -6,21 +6,24 @@ const LogIn = () => {
   const { googleSignIn, signIn } = useAuthContext();
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
+  const location = useLocation();
+  // console.log(location);
+
+  const from = location?.state?.from?.pathname || "/";
 
   const onSubmit = (data) => {
     console.log(data);
     signIn(data.email, data.password)
       .then(() => {
-        navigate("/");
+        navigate(from);
       })
       .catch((error) => console.log(error));
   };
 
   const handleGoogleLogIn = () => {
     googleSignIn()
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
+      .then(() => {
+        navigate(from);
       })
       .catch((error) => console.log(error));
   };

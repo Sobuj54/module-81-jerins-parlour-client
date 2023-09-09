@@ -10,6 +10,7 @@ import OrderList from "../OrderList/OrderList";
 import Book from "../Book/Book";
 import BookingList from "../BookingList/BookingList";
 import Review from "../Review/Review";
+import PrivateRoute from "../Routes/PrivateRoute";
 
 const Router = createBrowserRouter([
   {
@@ -40,7 +41,11 @@ const Router = createBrowserRouter([
   },
   {
     path: "admin",
-    element: <AdminPanel></AdminPanel>,
+    element: (
+      <PrivateRoute>
+        <AdminPanel></AdminPanel>
+      </PrivateRoute>
+    ),
     children: [
       // customer panel routes
       {
