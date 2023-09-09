@@ -7,6 +7,9 @@ import LogIn from "../../pages/Login/LogIn";
 import SignUp from "../../pages/SignUp/SignUp";
 import AdminPanel from "../../pages/Admin/AdminPanel";
 import OrderList from "../OrderList/OrderList";
+import Book from "../Book/Book";
+import BookingList from "../BookingList/BookingList";
+import Review from "../Review/Review";
 
 const Router = createBrowserRouter([
   {
@@ -39,6 +42,20 @@ const Router = createBrowserRouter([
     path: "admin",
     element: <AdminPanel></AdminPanel>,
     children: [
+      // customer panel routes
+      {
+        path: "book",
+        element: <Book></Book>,
+      },
+      {
+        path: "bookingList",
+        element: <BookingList></BookingList>,
+      },
+      {
+        path: "review",
+        element: <Review></Review>,
+      },
+      // admin routes
       {
         path: "orderList",
         element: <OrderList></OrderList>,

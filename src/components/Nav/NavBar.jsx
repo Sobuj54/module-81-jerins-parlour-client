@@ -19,6 +19,8 @@ const NavBar = () => {
       .catch((error) => console.log(error));
   };
 
+  const isAdmin = false;
+
   return (
     <header className="bg-gradient-to-b from-green-50 to-green-100">
       <div className="px-4 mx-auto sm:px-6 lg:px-8">
@@ -101,14 +103,25 @@ const NavBar = () => {
               Our Team{" "}
             </NavLink>
 
-            <NavLink
-              to="/admin/orderList"
-              className={`text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
-                isActive,
-              }) => (isActive ? "active" : "")}`}>
-              {" "}
-              Admin panel{" "}
-            </NavLink>
+            {isAdmin ? (
+              <NavLink
+                to="/admin/orderList"
+                className={`text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
+                  isActive,
+                }) => (isActive ? "active" : "")}`}>
+                {" "}
+                Admin panel{" "}
+              </NavLink>
+            ) : (
+              <NavLink
+                to="/admin/book"
+                className={`text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
+                  isActive,
+                }) => (isActive ? "active" : "")}`}>
+                {" "}
+                Customer panel{" "}
+              </NavLink>
+            )}
 
             <div className="w-px h-5 bg-black/20"></div>
 
