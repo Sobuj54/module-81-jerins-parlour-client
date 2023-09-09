@@ -1,8 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuthContext from "../../customHooks/useAuthContext";
+import { useForm } from "react-hook-form";
 
 const LogIn = () => {
-  const { googleSignIn } = useAuthContext();
+  const { googleSignIn, signIn } = useAuthContext();
+  const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    signIn(data.email, data.password)
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => console.log(error));
+  };
 
   const handleGoogleLogIn = () => {
     googleSignIn()
@@ -125,7 +137,7 @@ const LogIn = () => {
               </Link>
             </p>
 
-            <form action="#" method="POST" className="mt-8">
+            <form onSubmit={handleSubmit(onSubmit)} className="mt-8">
               <div className="space-y-5">
                 <div>
                   <label className="text-base font-medium text-gray-900">
@@ -151,7 +163,8 @@ const LogIn = () => {
 
                     <input
                       type="email"
-                      name=""
+                      {...register("email")}
+                      required
                       placeholder="Enter email to get started"
                       className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                     />
@@ -192,7 +205,8 @@ const LogIn = () => {
 
                     <input
                       type="password"
-                      name=""
+                      {...register("password")}
+                      required
                       placeholder="Enter your password"
                       className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                     />

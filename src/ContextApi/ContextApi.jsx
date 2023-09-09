@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
+  signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
   updateProfile,
@@ -19,6 +20,10 @@ const ContextApi = ({ children }) => {
 
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  const signIn = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
   };
 
   const googleSignIn = () => {
@@ -48,6 +53,7 @@ const ContextApi = ({ children }) => {
   const userInfo = {
     user,
     createUser,
+    signIn,
     updateUserProfile,
     logOut,
     googleSignIn,
