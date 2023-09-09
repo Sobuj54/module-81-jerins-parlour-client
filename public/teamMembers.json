@@ -1,0 +1,88 @@
+ [
+      {
+        "id": 1,
+        "img": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80",
+        "name": "Emily Anderson",
+        "post": "Salon Owner",
+        "description": "Emily is the proud owner of our salon, with over 20 years of experience in the beauty industry. She is passionate about providing the best services and creating a welcoming atmosphere for our clients. Emily's dedication and leadership inspire our team to excel."
+      },
+      {
+        "id": 2,
+        "img": "https://images.unsplash.com/photo-1485875437342-9b39470b3d95?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8d29tZW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+        "name": "Sophia Davis",
+        "post": "Master Stylist",
+        "description": "Sophia is our master stylist, known for her creativity and precision in haircutting and styling. With a keen eye for the latest trends, she ensures that clients leave the salon with a hairstyle that suits their personality and lifestyle."
+      },
+      {
+        "id": 3,
+        "img": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+        "name": "Olivia Smith",
+        "post": "Esthetician",
+        "description": "Olivia is our skilled esthetician, specializing in facials, skincare, and waxing services. Her gentle touch and expert knowledge leave clients feeling relaxed and rejuvenated. She customizes treatments to address individual skincare needs."
+      },
+      {
+        "id": 4,
+        "img": "https://images.unsplash.com/photo-1602442787305-decbd65be507?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHdvbWVufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+        "name": "Chloe Johnson",
+        "post": "Massage Therapist",
+        "description": "Chloe is our experienced massage therapist, dedicated to helping clients relieve stress and tension through therapeutic massage. Her healing hands and soothing techniques create a calming experience for our clients."
+      },
+      {
+        "id": 5,
+        "img": "https://images.unsplash.com/photo-1633328662602-c41a9bda7bf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwxOTExNTN8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "name": "Ava Wilson",
+        "post": "Nail Artist",
+        "description": "Ava is our talented nail artist, known for her creativity in nail art designs. She provides meticulous manicure and pedicure services, leaving clients with stunning and long-lasting nail designs."
+      },
+      {
+        "id": 6,
+        "img": "https://images.unsplash.com/photo-1633258993966-17878d2b10a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MnwxOTExNTN8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "name": "Lily Parker",
+        "post": "Makeup Artist",
+        "description": "Lily is our skilled makeup artist, with a passion for enhancing clients' natural beauty. She is known for her attention to detail and ability to create a flawless makeup look for any occasion."
+      },
+      {
+        "id": 7,
+        "img": "https://images.unsplash.com/photo-1598257006458-087169a1f08d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw2NTcxNzh8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "name": "Mia Turner",
+        "post": "Hairstylist",
+        "description": "Mia is a talented hairstylist who specializes in creating trendy and personalized haircuts. She loves experimenting with different styles and colors to give clients a fresh and confident look."
+      },
+      {
+        "id": 8,
+        "img": "https://images.unsplash.com/photo-1589563830842-1f786856ce6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MnwxNzA4NTZ8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "name": "Ella Martin",
+        "post": "Spa Therapist",
+        "description": "Ella is our dedicated spa therapist, offering a range of relaxing treatments to melt away stress. Her soothing hands and calming presence create a tranquil spa experience for our clients."
+      },
+      {
+        "id": 9,
+        "img": "https://images.unsplash.com/photo-1603004081579-bed57f9a0f9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTd8MTcwODU2fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
+        "name": "Aria Lopez",
+        "post": "Waxing Specialist",
+        "description": "Aria is our waxing specialist, ensuring clients have smooth and hair-free skin with minimal discomfort. Her expertise and attention to detail make waxing a breeze."
+      },
+      {
+        "id": 10,
+        "img": "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MjB8MTcwODU2fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
+        "name": "Grace Harris",
+        "post": "Color Specialist",
+        "description": "Grace is our color specialist, with a passion for transforming hair with beautiful shades and highlights. She creates personalized color solutions that enhance each client's unique style."
+      },
+      {
+        "id": 11,
+        "img": "https://images.unsplash.com/photo-1644417076004-591270852df9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MnwxODAzNzgyfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
+        "name": "Zoe Turner",
+        "post": "Eyebrow Artist",
+        "description": "Zoe is our expert eyebrow artist, skilled in shaping and grooming eyebrows to perfection. She knows how to frame your face and enhance your natural beauty with perfectly sculpted brows."
+      },
+      {
+        "id": 12,
+        "img": "https://images.unsplash.com/photo-1644417076004-591270852df9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MnwxODAzNzgyfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
+        "name": "Luna Rodriguez",
+        "post": "Skin Care Specialist",
+        "description": "Luna is our skin care specialist, offering a range of treatments to rejuvenate and revitalize your skin. Her deep understanding of skin care ensures clients leave with a radiant and youthful complexion."
+      }
+    ]
+  
+  
