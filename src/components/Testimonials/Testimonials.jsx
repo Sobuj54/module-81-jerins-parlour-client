@@ -59,7 +59,7 @@ const Testimonials = () => {
                 <img
                   src={testimonial.img}
                   alt={testimonial.name}
-                  className="h-14 w-14 rounded-full"
+                  className="h-14 w-14 rounded-full object-cover"
                 />
                 <div className="ml-6">
                   <h3 className="text-xl md:text-2xl font-bold">
