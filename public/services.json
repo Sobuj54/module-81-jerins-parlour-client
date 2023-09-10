@@ -1,6 +1,5 @@
 [
     {
-        "id": 1,
         "img": "https://img.freepik.com/free-photo/beautiful-woman-has-cutting-hair-hairdresser_329181-1942.jpg?size=626&ext=jpg",
         "title": "Haircut and Styling",
         "price": 50.00,
@@ -8,7 +7,6 @@
 
       },
       {
-        "id": 2,
         "img": "https://img.freepik.com/free-photo/skincare-beauty-female-feet-with-camomile-s-flower_186202-728.jpg?size=626&ext=jpg",
         "title": "Manicure and Pedicure",
         "price": 35.00,
@@ -16,7 +14,6 @@
 
       },
       {
-        "id": 3,
         "img": "https://img.freepik.com/free-photo/beautician-with-brush-applies-white-moisturizing-mask-face-young-girl-client-spa-beauty-salon_343596-4247.jpg?size=626&ext=jpg",
         "title": "Facial Spa",
         "price": 60.00,
@@ -24,7 +21,6 @@
 
       },
       {
-        "id": 4,
         "img": "https://img.freepik.com/free-photo/foot-massage_1098-19910.jpg?size=626&ext=jpg",
         "title": "Massage Therapy",
         "price": 75.00,
@@ -32,7 +28,6 @@
 
       },
       {
-        "id": 5,
         "img": "https://img.freepik.com/free-photo/beautiful-woman-s-nails-hands-legs-with-beautiful-french-manicure-art-design_186202-6674.jpg?size=626&ext=jpg",
         "title": "Nail Art",
         "price": 40.00,
@@ -40,7 +35,6 @@
 
       },
       {
-        "id": 6,
         "img": "https://img.freepik.com/free-photo/make-up-artist-getting-model-ready-photoshootin_23-2149305147.jpg?size=626&ext=jpg",
         "title": "Makeup Application",
         "price": 55.00,
@@ -48,7 +42,6 @@
 
       },
       {
-        "id": 7,
         "img": "https://img.freepik.com/free-photo/master-white-gloves-work-balck-eyebrows-beauty-salon_231208-3547.jpg?size=626&ext=jpg",
         "title": "Eyebrow Shaping",
         "price": 25.00,
@@ -56,7 +49,6 @@
 
       },
       {
-        "id": 8,
         "img": "https://img.freepik.com/free-photo/barber-rsquo-s-hairstyling-women-rsquo-s-salon-jobs-career-campaign_53876-127192.jpg?size=626&ext=jpg",
         "title": "Hair Coloring",
         "price": 70.00,
@@ -64,7 +56,6 @@
 
       },
       {
-        "id": 9,
         "img": "https://img.freepik.com/free-photo/beautiful-young-girl-beauty-salon_1157-21117.jpg?size=626&ext=jpg",
         "title": "Waxing Services",
         "price": 45.00,
@@ -72,7 +63,6 @@
 
       },
       {
-        "id": 10,
         "img": "https://img.freepik.com/free-photo/wedding-beautiful-bride_144627-13003.jpg?size=626&ext=jpg",
         "title": "Bridal Package",
         "price": 150.00,
@@ -80,7 +70,6 @@
 
       },
       {
-        "id": 11,
         "img": "https://img.freepik.com/free-photo/beautiful-keratin-treated-hair_23-2149332460.jpg?size=626&ext=jpg",
         "title": "Hair Extensions",
         "price": 85.00,
@@ -88,7 +77,6 @@
 
       },
       {
-        "id": 12,
         "img": "https://img.freepik.com/free-photo/beautiful-girl-face-perfect-skin_155003-10633.jpg?size=626&ext=jpg",
         "title": "Skin Rejuvenation",
         "price": 90.00,
@@ -96,28 +84,24 @@
 
       },
       {
-        "id": 13,
         "img": "https://img.freepik.com/free-photo/toilet-bag-products-arrangement_23-2149879995.jpg?size=626&ext=jpg",
         "title": "Pamper Package",
         "price": 120.00,
         "description": "Indulge in a complete pampering experience with our package. This luxurious package includes a massage, facial, and nail services to pamper you from head to toe, leaving you feeling relaxed and rejuvenated."
       },
       {
-        "id": 14,
         "img": "https://img.freepik.com/free-photo/sideview-young-woman-lying-during-lashes-enlarging_7502-9368.jpg?size=626&ext=jpg",
         "title": "Eyelash Extensions",
         "price": 65.00,
         "description": "Enhance your natural lashes with eyelash extensions. Our skilled technicians will apply individual extensions to create a fuller, longer lash look that lasts for weeks, saving you time on mascara."
       },
       {
-        "id": 15,
         "img": "https://img.freepik.com/free-photo/beauty-spa_144627-46193.jpg?size=626&ext=jpg",
         "title": "Body Scrub",
         "price": 55.00,
         "description": "Revitalize your skin with a soothing body scrub. Our exfoliating treatments will remove dead skin cells and leave your skin feeling soft, smooth, and refreshed."
       },
       {
-        "id": 16,
         "img": "https://img.freepik.com/free-photo/creating-trendy-hairstyle-by-young-woman_329181-1950.jpg?size=626&ext=jpg",
         "title": "Hairstyling Classes",
         "price": 75.00,

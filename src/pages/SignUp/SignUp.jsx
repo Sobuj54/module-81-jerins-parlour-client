@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuthContext from "../../customHooks/useAuthContext";
 
 const SignUp = () => {
   const { createUser, updateUserProfile, googleSignIn } = useAuthContext();
+  const navigate = useNavigate();
 
   const { register, handleSubmit } = useForm();
 
@@ -16,6 +17,7 @@ const SignUp = () => {
         updateUserProfile(data.name)
           // .then(() => console.log("user profile has been updated"))
           .catch((error) => console.log(error));
+        navigate("/");
 
         console.log(newUser);
       })
@@ -26,6 +28,7 @@ const SignUp = () => {
     googleSignIn()
       .then((result) => {
         const user = result.user;
+        navigate("/");
         console.log(user);
       })
       .catch((error) => console.log(error));

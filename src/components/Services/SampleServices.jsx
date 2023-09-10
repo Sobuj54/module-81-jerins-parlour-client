@@ -5,12 +5,10 @@ const SampleServices = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch("services.json")
+    fetch(`http://localhost:5000/services?limit=3`)
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
-
-  const demoServices = services.slice(0, 3);
 
   return (
     <section className="py-10 bg-white sm:py-16 lg:py-24">
@@ -22,9 +20,9 @@ const SampleServices = () => {
         </div>
 
         <div className="grid max-w-md grid-cols-1 gap-10 mx-auto mt-8 text-center lg:max-w-full lg:mt-16 lg:grid-cols-3">
-          {demoServices.map((service) => (
+          {services.map((service) => (
             <div
-              key={service.id}
+              key={service._id}
               className="overflow-hidden bg-green-50 border-2 border-green-100 shadow-lg shadow-green-300 rounded-md">
               <div className="p-6 xl:px-6">
                 <img
@@ -41,14 +39,6 @@ const SampleServices = () => {
                 <p className="mt-3 text-sm md:text-base text-dark/80">
                   {service.description}
                 </p>
-
-                <Link
-                  to="/services"
-                  className="inline-flex items-center justify-center px-8 md:px-10 py-3 md:py-4 mt-10 text-base font-semibold text-white transition-all duration-200 bg-gradient-to-r from-pink-500 to-blue-500 rounded-md hover:from-blue-500 hover:to-pink-500"
-                  role="button">
-                  {" "}
-                  Book Service{" "}
-                </Link>
               </div>
             </div>
           ))}
