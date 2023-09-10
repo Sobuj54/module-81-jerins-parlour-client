@@ -17,9 +17,9 @@ const BookingList = () => {
 
   return (
     <div className="w-full h-full">
-      <h2 className="text-2xl font-bold my-6">Booking List.</h2>
+      <h2 className="text-2xl font-bold my-6 ml-4">Booking List.</h2>
       <div className="bg-green-50">
-        <div className="grid grid-cols-3 gap-7 p-4 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 p-4 py-10">
           {bookings.map((booking) => (
             <IndividualBooking
               key={booking._id}

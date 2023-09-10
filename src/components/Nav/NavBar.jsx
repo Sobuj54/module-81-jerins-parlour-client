@@ -146,7 +146,7 @@ const NavBar = () => {
 
           {/* for mobile devices this will work*/}
           <div
-            className={`lg:hidden z-30 absolute ml-auto flex flex-col gap-3 items-center text-start justify-center transition-all duration-500 ease-in-out bg-gradient-to-b from-green-200 to-green-300 w-3/4 md:w-2/3 p-10 md:p-14 rounded-xl ${
+            className={`lg:hidden z-30 absolute ml-auto flex flex-col gap-3 items-center text-start justify-center transition-all duration-500 ease-in-out bg-gradient-to-b from-green-200 to-green-300 w-5/6 md:w-2/3 p-10 md:p-14 rounded-xl ${
               isOpen
                 ? `top-1/4 md:top-1/3 left-1/2 -translate-x-1/2  `
                 : `-top-2/3 left-1/2 -translate-x-1/2 `
@@ -154,7 +154,7 @@ const NavBar = () => {
             <NavLink
               to="/"
               onClick={() => setIsOpen(!isOpen)}
-              className={`text-base text-start font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
+              className={`text-base text-center font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
                 isActive,
               }) => (isActive ? "active" : "")}`}>
               {" "}
@@ -164,7 +164,7 @@ const NavBar = () => {
             <NavLink
               to="/services"
               onClick={() => setIsOpen(!isOpen)}
-              className={`text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
+              className={`text-base text-center font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
                 isActive,
               }) => (isActive ? "active" : "")}`}>
               {" "}
@@ -175,22 +175,34 @@ const NavBar = () => {
               to="/team"
               onClick={() => setIsOpen(!isOpen)}
               title=""
-              className={`text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
+              className={`text-base text-center font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
                 isActive,
               }) => (isActive ? "active" : "")}`}>
               {" "}
               Our Team{" "}
             </NavLink>
 
-            <NavLink
-              to="/admin/orderList"
-              onClick={() => setIsOpen(!isOpen)}
-              className={`text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
-                isActive,
-              }) => (isActive ? "active" : "")}`}>
-              {" "}
-              Admin panel{" "}
-            </NavLink>
+            {isAdmin ? (
+              <NavLink
+                to="/admin/orderList"
+                onClick={() => setIsOpen(!isOpen)}
+                className={`text-base text-center font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
+                  isActive,
+                }) => (isActive ? "active" : "")}`}>
+                {" "}
+                Admin panel{" "}
+              </NavLink>
+            ) : (
+              <NavLink
+                to="/admin/bookingList"
+                onClick={() => setIsOpen(!isOpen)}
+                className={`text-base text-center font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
+                  isActive,
+                }) => (isActive ? "active" : "")}`}>
+                {" "}
+                Customer panel{" "}
+              </NavLink>
+            )}
 
             <div className="w-4/5 h-px bg-black/20"></div>
 
