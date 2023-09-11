@@ -20,7 +20,7 @@ const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
 
   useEffect(() => {
-    fetch("testimonials.json")
+    fetch("http://localhost:5000/reviews")
       .then((res) => res.json())
       .then((data) => setTestimonials(data));
   }, []);
@@ -53,7 +53,7 @@ const Testimonials = () => {
         modules={[Pagination]}
         className="mySwiper">
         {testimonials.map((testimonial) => (
-          <SwiperSlide key={testimonial.id}>
+          <SwiperSlide key={testimonial._id}>
             <div className="p-5 mt-10 md:mt-16 mb-5 md:mb-10 flex flex-col h-auto justify-between">
               <div className="flex items-center mb-5">
                 <img

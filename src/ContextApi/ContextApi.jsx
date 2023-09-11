@@ -11,6 +11,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { app } from "../firebase/firebase.config";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 
@@ -50,8 +51,18 @@ const ContextApi = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      setLoading(false);
       console.log(currentUser);
+      if (currentUser?.email) {
+        axios
+          .post("http://localhost:5000/jwt", { email: currentUser?.email })
+          .then((res) => {
+            // console.log(res.data);
+            localStorage.setItem("token", res.data.token);
+            setLoading(false);
+          });
+      } else {
+        localStorage.removeItem("token");
+      }
     });
     return () => {
       return unsubscribe();

@@ -114,7 +114,7 @@ const NavBar = () => {
               </NavLink>
             ) : (
               <NavLink
-                to="/admin/book"
+                to="/admin/bookingList"
                 className={`text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
                   isActive,
                 }) => (isActive ? "active" : "")}`}>

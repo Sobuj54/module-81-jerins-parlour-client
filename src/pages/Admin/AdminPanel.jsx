@@ -129,6 +129,7 @@ const AdminPanel = () => {
           </button>
         )}
       </div>
+
       {/* for mobile */}
       <div
         className={`absolute z-10 bg-green-200 h-screen w-3/4 sm:w-2/4 md:w-2/6 lg:hidden transition-all duration-300 ease-in-out ${
