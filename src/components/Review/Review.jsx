@@ -1,10 +1,40 @@
 import { useForm } from "react-hook-form";
+import useAuthContext from "../../customHooks/useAuthContext";
+import useAxiosSecure from "../../customHooks/useAxiosSecure";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Review = () => {
-  const { register, handleSubmit } = useForm();
+  const { user } = useAuthContext();
+  const [axiosSecure] = useAxiosSecure();
+  const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
+    const { photo, name, profession, description, rating } = data;
+
+    axiosSecure
+      .post(`/reviews`, {
+        img: photo,
+        name: name,
+        profession: profession,
+        comment: description,
+        rating: parseInt(rating),
+      })
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.insertedId) {
+          toast.success("Review submission successful !", {
+            position: toast.POSITION.TOP_CENTER,
+          });
+          reset();
+        } else {
+          toast.error("Something went wrong !", {
+            position: toast.POSITION.TOP_LEFT,
+          });
+        }
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -33,6 +63,7 @@ const Review = () => {
                           type="text"
                           {...register("name")}
                           required
+                          defaultValue={user?.displayName}
                           placeholder="Enter your full name"
                           className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
                         />
@@ -65,6 +96,7 @@ const Review = () => {
                           type="url"
                           {...register("photo")}
                           required
+                          defaultValue={user?.photoURL}
                           placeholder="Enter your full name"
                           className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
                         />
@@ -118,6 +150,7 @@ const Review = () => {
           </div>
         </div>
       </section>
+      <ToastContainer />
     </div>
   );
 };
