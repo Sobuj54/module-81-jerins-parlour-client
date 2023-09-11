@@ -1,19 +1,29 @@
-import { useEffect, useState } from "react";
 import useAuthContext from "../../customHooks/useAuthContext";
 import IndividualBooking from "./IndividualBooking";
+import { useQuery } from "@tanstack/react-query";
+import useAxiosSecure from "../../customHooks/useAxiosSecure";
 
 const BookingList = () => {
   const { user } = useAuthContext();
-  const [bookings, setBookings] = useState([]);
+  const [axiosSecure] = useAxiosSecure();
+  // const [bookings, setBookings] = useState([]);
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/bookings?email=${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log("data", data);
-        setBookings(data);
-      });
-  }, [user?.email]);
+  // useEffect(() => {
+  //   fetch(`http://localhost:5000/bookings?email=${user?.email}`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       // console.log("data", data);
+  //       setBookings(data);
+  //     });
+  // }, [user?.email]);
+
+  const { data: bookings = [] } = useQuery({
+    queryKey: ["bookings"],
+    queryFn: async () => {
+      const res = await axiosSecure.get(`/bookings?email=${user?.email}`);
+      return res.data;
+    },
+  });
 
   return (
     <div className="w-full h-full">
