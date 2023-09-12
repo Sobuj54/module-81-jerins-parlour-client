@@ -45,8 +45,8 @@ const Review = () => {
           <div className="max-w-5xl mx-auto mt-2 sm:mt-5">
             <div className="mt-6 overflow-hidden bg-white rounded-xl">
               <div className="px-6 py-12 sm:p-12 md:p-14  w-full">
-                <h3 className="text-3xl font-semibold text-center text-gray-900">
-                  Send us a message
+                <h3 className="text-3xl font-semibold capitalize text-center text-gray-900">
+                  Tell us about your experience
                 </h3>
 
                 <form

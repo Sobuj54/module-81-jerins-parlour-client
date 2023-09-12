@@ -206,7 +206,7 @@ const AdminPanel = () => {
         </div>
       </div>
 
-      <div className="absolute left-0 lg:left-60">
+      <div className="absolute left-0 lg:left-60 top-0 right-0 bottom-0">
         <Outlet />
       </div>
     </div>

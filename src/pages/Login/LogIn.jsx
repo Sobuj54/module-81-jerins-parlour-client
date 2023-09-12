@@ -13,7 +13,6 @@ const LogIn = () => {
 
   // sign in with email and password
   const onSubmit = (data) => {
-    console.log(data);
     signIn(data.email, data.password)
       .then(() => {
         navigate(from);
@@ -33,8 +32,7 @@ const LogIn = () => {
   // sign in with facebook
   const handleFacebookLogIn = () => {
     facebookSignIn()
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
         navigate(from);
       })
       .catch((error) => {
