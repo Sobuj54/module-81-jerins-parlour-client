@@ -2,6 +2,7 @@ import useAuthContext from "../../customHooks/useAuthContext";
 import IndividualBooking from "./IndividualBooking";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../customHooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 const BookingList = () => {
   const { user, loading } = useAuthContext();
@@ -28,6 +29,11 @@ const BookingList = () => {
 
   return (
     <div className="w-full h-full">
+      <Helmet>
+        <title>Customer Panel | Booking List</title>
+        <link rel="Booking List" href="https://www.chipotle.com" />
+        <meta name="Customer Panel" value="Booking List" />
+      </Helmet>
       <h2 className="text-2xl font-bold my-6 ml-4">Booking List.</h2>
       <div className="bg-green-50">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 p-4 py-10">

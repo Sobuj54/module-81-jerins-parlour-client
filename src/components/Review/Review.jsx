@@ -3,6 +3,7 @@ import useAuthContext from "../../customHooks/useAuthContext";
 import useAxiosSecure from "../../customHooks/useAxiosSecure";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet-async";
 
 const Review = () => {
   const { user } = useAuthContext();
@@ -39,6 +40,11 @@ const Review = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Customer Panel | Review</title>
+        <link rel="Review" href="https://www.chipotle.com" />
+        <meta name="Customer Panel" value="Review" />
+      </Helmet>
       <h3 className="text-2xl font-bold my-6">Review</h3>
       <section className="py-10 bg-gray-100 sm:py-16 lg:py-10">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">

@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import useAuthContext from "../../customHooks/useAuthContext";
+import { Helmet } from "react-helmet-async";
 
 const SignUp = () => {
   const { createUser, updateUserProfile, googleSignIn } = useAuthContext();
@@ -36,6 +37,11 @@ const SignUp = () => {
 
   return (
     <section className="relative py-10 bg-gray-900 sm:py-16 lg:py-24">
+      <Helmet>
+        <title>Jerins Parlour | Sign up</title>
+        <link rel="Sign Up" href="https://www.chipotle.com" />
+        <meta name="Jerins Parlour" value="Sign Up" />
+      </Helmet>
       <div className="absolute inset-0">
         <img
           className="object-cover w-full h-full"

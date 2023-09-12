@@ -1,6 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuthContext from "../../customHooks/useAuthContext";
 import { useForm } from "react-hook-form";
+import { Helmet } from "react-helmet-async";
 
 const LogIn = () => {
   const { googleSignIn, signIn, facebookSignIn } = useAuthContext();
@@ -42,6 +43,11 @@ const LogIn = () => {
 
   return (
     <section className="bg-white">
+      <Helmet>
+        <title>Jerins Parlour | Log in</title>
+        <link rel="Login" href="https://www.chipotle.com" />
+        <meta name="Jerins Parlour" value="Login" />
+      </Helmet>
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="relative flex items-end px-4 pb-10 pt-60 sm:pb-16 md:justify-center lg:pb-24 bg-gray-50 sm:px-6 lg:px-8">
           <div className="absolute inset-0">

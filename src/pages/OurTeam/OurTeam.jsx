@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const OurTeam = () => {
   const [teamMembers, setTeamMembers] = useState([]);
@@ -11,6 +12,11 @@ const OurTeam = () => {
 
   return (
     <div className="mb-16">
+      <Helmet>
+        <title>Jerins Parlour | Our Team</title>
+        <link rel="Our Team" href="https://www.chipotle.com" />
+        <meta name="Jerins Parlour" value="Our Team" />
+      </Helmet>
       <div className="container flex justify-center mx-auto pt-16">
         <div>
           <p className="text-gray-500 text-lg text-center font-normal pb-3">

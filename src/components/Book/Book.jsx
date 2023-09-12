@@ -1,5 +1,14 @@
+import { Helmet } from "react-helmet-async";
+
 const Book = () => {
-  return <div>Book</div>;
+  return (
+    <>
+      <Helmet>
+        <title>Customer Panel | Book</title>
+      </Helmet>
+      <div>book</div>
+    </>
+  );
 };
 
 export default Book;
