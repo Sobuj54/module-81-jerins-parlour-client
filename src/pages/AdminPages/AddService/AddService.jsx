@@ -2,12 +2,40 @@ import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { ToastContainer } from "react-toastify";
 
+const imageHostingToken = import.meta.env.VITE_imgbb_apiKey;
+
 const AddService = () => {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit } = useForm();
+
+  //   imgbb hosting url
+  const imageHostingUrl = `https://api.imgbb.com/1/upload?key=${imageHostingToken}`;
 
   const onSubmit = (data) => {
     console.log(data);
-    reset();
+    const { title, price, description } = data;
+    console.log(data.img[0]);
+
+    const formData = new FormData();
+    formData.append("image", data.img[0]);
+
+    fetch(imageHostingUrl, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((imageResponse) => {
+        console.log(imageResponse);
+        if (imageResponse.success) {
+          const hostedImageUrl = imageResponse.data.display_url;
+
+          const newService = {
+            img: hostedImageUrl,
+            title,
+            price: parseFloat(price),
+            description,
+          };
+        }
+      });
   };
 
   return (
@@ -48,7 +76,7 @@ const AddService = () => {
                       </label>
                       <div className="mt-2.5 relative">
                         <input
-                          type="text"
+                          type="number"
                           {...register("price")}
                           required
                           placeholder="Enter Service Price"
