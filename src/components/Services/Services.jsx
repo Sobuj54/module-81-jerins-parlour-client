@@ -75,7 +75,7 @@ const Services = () => {
                 <img
                   src={service.img}
                   alt={service.title}
-                  className="rounded-lg"
+                  className="rounded-lg h-56 object-cover"
                 />
                 <h3 className="text-xl md:text-3xl font-semibold mt-3 font-sans">
                   {service.title}
@@ -83,7 +83,7 @@ const Services = () => {
                 <p className="text-xl md:text-3xl font-bold mt-5 text-green-600">
                   ${service.price}
                 </p>
-                <p className="mt-3 text-sm md:text-base text-dark/80">
+                <p className="mt-3 text-sm md:text-base h-48 overflow-y-auto text-dark/80">
                   {service.description}
                 </p>
 
