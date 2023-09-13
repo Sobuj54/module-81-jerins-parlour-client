@@ -14,7 +14,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import { useState } from "react";
 
 const AdminPanel = () => {
-  const isAdmin = false;
+  const isAdmin = true;
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -135,11 +135,11 @@ const AdminPanel = () => {
         className={`absolute z-10 bg-green-200 h-screen w-3/4 sm:w-2/4 md:w-2/6 lg:hidden transition-all duration-300 ease-in-out ${
           isOpen ? `left-0 top-0 bottom-0` : `-left-3/4`
         }`}>
-        <div className="w-8/12 mx-auto mt-10">
+        <div className="w-9/12 sm:w-5/12 mx-auto mt-10">
           <img src={logo} alt="logo" className="bg-cover" />
         </div>
 
-        <div className="my-20 w-8/12 mx-auto">
+        <div className="my-20 w-9/12 sm:w-5/12 mx-auto">
           <div className="flex flex-col items-start justify-center space-y-6">
             {isAdmin ? (
               <>

@@ -46,7 +46,7 @@ const Review = () => {
         <meta name="Customer Panel" value="Review" />
       </Helmet>
       <h3 className="text-2xl font-bold my-6">Review</h3>
-      <section className="py-10 bg-gray-100 sm:py-16 lg:py-10">
+      <section className="py-10 bg-green-50 sm:py-16 lg:py-10">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-5xl mx-auto mt-2 sm:mt-5">
             <div className="mt-6 overflow-hidden bg-white rounded-xl">

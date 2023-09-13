@@ -58,11 +58,11 @@ const ContextApi = ({ children }) => {
           .then((res) => {
             // console.log(res.data);
             localStorage.setItem("token", res.data.token);
-            setLoading(false);
           });
       } else {
         localStorage.removeItem("token");
       }
+      setLoading(false);
     });
     return () => {
       return unsubscribe();
