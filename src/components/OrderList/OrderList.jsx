@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../customHooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 const OrderList = () => {
   const [axiosSecure] = useAxiosSecure();
@@ -13,6 +14,11 @@ const OrderList = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Admin Panel | Order List</title>
+        <link rel="Order List" href="https://www.chipotle.com" />
+        <meta name="Admin Panel" value="Order List" />
+      </Helmet>
       <h2 className="text-3xl font-bold my-4">Order List</h2>
       <div className="bg-green-50  p-5">
         <table className="table-auto w-full bg-white ">

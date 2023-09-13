@@ -12,6 +12,7 @@ import BookingList from "../BookingList/BookingList";
 import Review from "../Review/Review";
 import PrivateRoute from "../Routes/PrivateRoute";
 import ErrorPage from "../../pages/ErrorPage/ErrorPage";
+import AddService from "../../pages/AdminPages/AddService/AddService";
 
 const Router = createBrowserRouter([
   {
@@ -67,6 +68,10 @@ const Router = createBrowserRouter([
       {
         path: "orderList",
         element: <OrderList></OrderList>,
+      },
+      {
+        path: "addService",
+        element: <AddService></AddService>,
       },
     ],
   },

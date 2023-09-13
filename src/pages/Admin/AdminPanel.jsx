@@ -45,13 +45,13 @@ const AdminPanel = () => {
                     Add Service
                   </span>
                 </NavLink>
-                <NavLink to="/makeAdmin">
+                <NavLink to="/admin/makeAdmin">
                   <FontAwesomeIcon icon={faUserPlus} />
                   <span className="font-semibold ml-2 text-black/75">
                     Make Admin
                   </span>
                 </NavLink>
-                <NavLink to="/manageServices">
+                <NavLink to="/admin/manageServices">
                   <FontAwesomeIcon icon={faBoxesStacked} />
                   <span className="font-semibold ml-2 text-black/75">
                     Manage Services
@@ -155,20 +155,24 @@ const AdminPanel = () => {
                     Order List
                   </span>
                 </NavLink>
-                <NavLink to="/addService" onClick={() => setIsOpen(!isOpen)}>
+                <NavLink
+                  to="/admin/addService"
+                  onClick={() => setIsOpen(!isOpen)}>
                   <FontAwesomeIcon icon={faPlus} />
                   <span className="font-semibold ml-2 text-black/75">
                     Add Service
                   </span>
                 </NavLink>
-                <NavLink to="/makeAdmin" onClick={() => setIsOpen(!isOpen)}>
+                <NavLink
+                  to="/admin/makeAdmin"
+                  onClick={() => setIsOpen(!isOpen)}>
                   <FontAwesomeIcon icon={faUserPlus} />
                   <span className="font-semibold ml-2 text-black/75">
                     Make Admin
                   </span>
                 </NavLink>
                 <NavLink
-                  to="/manageServices"
+                  to="/admin/manageServices"
                   onClick={() => setIsOpen(!isOpen)}>
                   <FontAwesomeIcon icon={faBoxesStacked} />
                   <span className="font-semibold ml-2 text-black/75">
