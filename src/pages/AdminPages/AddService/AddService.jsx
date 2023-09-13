@@ -1,41 +1,68 @@
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import useAxiosSecure from "../../../customHooks/useAxiosSecure";
+import "react-toastify/dist/ReactToastify.css";
 
 const imageHostingToken = import.meta.env.VITE_imgbb_apiKey;
 
 const AddService = () => {
-  const { register, handleSubmit } = useForm();
+  const [axiosSecure] = useAxiosSecure();
+  const { register, handleSubmit, reset } = useForm();
 
   //   imgbb hosting url
   const imageHostingUrl = `https://api.imgbb.com/1/upload?key=${imageHostingToken}`;
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     const { title, price, description } = data;
-    console.log(data.img[0]);
+    // console.log(data.img[0]);
 
     const formData = new FormData();
     formData.append("image", data.img[0]);
+    try {
+      fetch(imageHostingUrl, {
+        method: "POST",
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then((imageResponse) => {
+          // console.log(imageResponse);
+          if (imageResponse.success) {
+            const hostedImageUrl = imageResponse.data.display_url;
 
-    fetch(imageHostingUrl, {
-      method: "POST",
-      body: formData,
-    })
-      .then((res) => res.json())
-      .then((imageResponse) => {
-        console.log(imageResponse);
-        if (imageResponse.success) {
-          const hostedImageUrl = imageResponse.data.display_url;
+            const newService = {
+              img: hostedImageUrl,
+              title,
+              price: parseFloat(price),
+              description,
+            };
 
-          const newService = {
-            img: hostedImageUrl,
-            title,
-            price: parseFloat(price),
-            description,
-          };
-        }
+            //   posting this new service to server
+            axiosSecure.post(`/services`, newService).then((res) => {
+              // console.log("data after posting :", res.data);
+              if (res.data.insertedId) {
+                reset();
+                toast.success("You've successfully added a Service !", {
+                  position: toast.POSITION.TOP_CENTER,
+                });
+              } else {
+                toast.error("Couldn't add a Service !", {
+                  position: toast.POSITION.TOP_CENTER,
+                });
+              }
+            });
+          } else {
+            toast.error("Something went wrong !", {
+              position: toast.POSITION.TOP_CENTER,
+            });
+          }
+        });
+    } catch (e) {
+      toast.error(`Something went wrong ! ${e}`, {
+        position: toast.POSITION.TOP_CENTER,
       });
+    }
   };
 
   return (
