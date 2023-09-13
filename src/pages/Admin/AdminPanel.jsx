@@ -39,7 +39,7 @@ const AdminPanel = () => {
                     Order List
                   </span>
                 </NavLink>
-                <NavLink to="/addService">
+                <NavLink to="/admin/addService">
                   <FontAwesomeIcon icon={faPlus} />
                   <span className="font-semibold ml-2 text-black/75">
                     Add Service

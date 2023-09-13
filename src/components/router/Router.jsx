@@ -11,6 +11,7 @@ import Book from "../Book/Book";
 import BookingList from "../BookingList/BookingList";
 import Review from "../Review/Review";
 import PrivateRoute from "../Routes/PrivateRoute";
+import ErrorPage from "../../pages/ErrorPage/ErrorPage";
 
 const Router = createBrowserRouter([
   {
@@ -38,6 +39,7 @@ const Router = createBrowserRouter([
         element: <SignUp></SignUp>,
       },
     ],
+    errorElement: <ErrorPage></ErrorPage>,
   },
   {
     path: "admin",
@@ -46,6 +48,7 @@ const Router = createBrowserRouter([
         <AdminPanel></AdminPanel>
       </PrivateRoute>
     ),
+
     children: [
       // customer panel routes
       {
