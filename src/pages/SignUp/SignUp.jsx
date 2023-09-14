@@ -2,6 +2,9 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import useAuthContext from "../../customHooks/useAuthContext";
 import { Helmet } from "react-helmet-async";
+import axios from "axios";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 
 const SignUp = () => {
   const { createUser, updateUserProfile, googleSignIn } = useAuthContext();
@@ -11,16 +14,27 @@ const SignUp = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    createUser(data.email, data.password)
-      .then((User) => {
-        const newUser = User.user;
+    const { name, email, password } = data;
+    createUser(email, password)
+      .then(() => {
         // update user profile name
         updateUserProfile(data.name)
           // .then(() => console.log("user profile has been updated"))
           .catch((error) => console.log(error));
-        navigate("/");
 
-        console.log(newUser);
+        // post the new user
+        axios
+          .post("http://localhost:5000/users", { name, email })
+          .then((res) => {
+            console.log(res.data);
+            if (res.data.insertedId) {
+              toast.success("New User Created !", {
+                position: toast.POSITION.TOP_CENTER,
+              });
+
+              navigate("/");
+            }
+          });
       })
       .catch((error) => console.log(error));
   };
@@ -185,6 +199,7 @@ const SignUp = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 };
