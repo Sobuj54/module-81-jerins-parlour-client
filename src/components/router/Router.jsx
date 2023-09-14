@@ -13,6 +13,7 @@ import Review from "../Review/Review";
 import PrivateRoute from "../Routes/PrivateRoute";
 import ErrorPage from "../../pages/ErrorPage/ErrorPage";
 import AddService from "../../pages/AdminPages/AddService/AddService";
+import MakeAdmin from "../../pages/AdminPages/MakeAdmin/MakeAdmin";
 
 const Router = createBrowserRouter([
   {
@@ -72,6 +73,10 @@ const Router = createBrowserRouter([
       {
         path: "addService",
         element: <AddService></AddService>,
+      },
+      {
+        path: "makeAdmin",
+        element: <MakeAdmin></MakeAdmin>,
       },
     ],
   },
