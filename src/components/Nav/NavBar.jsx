@@ -3,9 +3,11 @@ import logo from "../../assets/logo.png";
 import "./NavBar.css";
 import { useState } from "react";
 import useAuthContext from "../../customHooks/useAuthContext";
+import useAdmin from "../../customHooks/useAdmin";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAdmin] = useAdmin();
 
   const { user, logOut } = useAuthContext();
   const navigate = useNavigate();
@@ -18,8 +20,6 @@ const NavBar = () => {
       })
       .catch((error) => console.log(error));
   };
-
-  const isAdmin = true;
 
   return (
     <header className="bg-gradient-to-b from-green-50 to-green-100">
@@ -103,7 +103,7 @@ const NavBar = () => {
               Our Team{" "}
             </NavLink>
 
-            {isAdmin ? (
+            {isAdmin.role === "Admin" ? (
               <NavLink
                 to="/admin/orderList"
                 className={`text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
@@ -182,7 +182,7 @@ const NavBar = () => {
               Our Team{" "}
             </NavLink>
 
-            {isAdmin ? (
+            {isAdmin.role === "Admin" ? (
               <NavLink
                 to="/admin/orderList"
                 onClick={() => setIsOpen(!isOpen)}
