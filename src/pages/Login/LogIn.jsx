@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuthContext from "../../customHooks/useAuthContext";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
+import axios from "axios";
 
 const LogIn = () => {
   const { googleSignIn, signIn, facebookSignIn } = useAuthContext();
@@ -24,8 +25,19 @@ const LogIn = () => {
   // sign in with google
   const handleGoogleLogIn = () => {
     googleSignIn()
-      .then(() => {
-        navigate(from);
+      .then((result) => {
+        const user = result.user;
+        const { displayName, email } = user;
+
+        // post the new user
+        axios
+          .post("http://localhost:5000/users", { name: displayName, email })
+          .then((res) => {
+            // console.log(res.data);
+            if (res.data.insertedId) {
+              navigate(from);
+            }
+          });
       })
       .catch((error) => console.log(error));
   };

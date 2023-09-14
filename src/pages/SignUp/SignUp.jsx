@@ -3,8 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuthContext from "../../customHooks/useAuthContext";
 import { Helmet } from "react-helmet-async";
 import axios from "axios";
-import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer, toast } from "react-toastify";
 
 const SignUp = () => {
   const { createUser, updateUserProfile, googleSignIn } = useAuthContext();
@@ -26,12 +24,8 @@ const SignUp = () => {
         axios
           .post("http://localhost:5000/users", { name, email })
           .then((res) => {
-            console.log(res.data);
+            // console.log(res.data);
             if (res.data.insertedId) {
-              toast.success("New User Created !", {
-                position: toast.POSITION.TOP_CENTER,
-              });
-
               navigate("/");
             }
           });
@@ -43,8 +37,19 @@ const SignUp = () => {
     googleSignIn()
       .then((result) => {
         const user = result.user;
-        navigate("/");
-        console.log(user);
+        const { displayName, email } = user;
+
+        // post the new user
+        axios
+          .post("http://localhost:5000/users", { name: displayName, email })
+          .then((res) => {
+            // console.log(res.data);
+            if (res.data.insertedId) {
+              navigate("/");
+            }
+          });
+
+        // console.log(user);
       })
       .catch((error) => console.log(error));
   };
@@ -199,7 +204,6 @@ const SignUp = () => {
           </div>
         </div>
       </div>
-      <ToastContainer />
     </section>
   );
 };
