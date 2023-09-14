@@ -14,6 +14,7 @@ import PrivateRoute from "../Routes/PrivateRoute";
 import ErrorPage from "../../pages/ErrorPage/ErrorPage";
 import AddService from "../../pages/AdminPages/AddService/AddService";
 import MakeAdmin from "../../pages/AdminPages/MakeAdmin/MakeAdmin";
+import AdminRoute from "../Routes/AdminRoute";
 
 const Router = createBrowserRouter([
   {
@@ -68,15 +69,27 @@ const Router = createBrowserRouter([
       // admin routes
       {
         path: "orderList",
-        element: <OrderList></OrderList>,
+        element: (
+          <AdminRoute>
+            <OrderList></OrderList>
+          </AdminRoute>
+        ),
       },
       {
         path: "addService",
-        element: <AddService></AddService>,
+        element: (
+          <AdminRoute>
+            <AddService></AddService>
+          </AdminRoute>
+        ),
       },
       {
         path: "makeAdmin",
-        element: <MakeAdmin></MakeAdmin>,
+        element: (
+          <AdminRoute>
+            <MakeAdmin></MakeAdmin>
+          </AdminRoute>
+        ),
       },
     ],
   },

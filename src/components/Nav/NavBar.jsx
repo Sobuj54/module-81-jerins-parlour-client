@@ -103,7 +103,7 @@ const NavBar = () => {
               Our Team{" "}
             </NavLink>
 
-            {isAdmin.role === "Admin" ? (
+            {isAdmin?.role === "Admin" ? (
               <NavLink
                 to="/admin/orderList"
                 className={`text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
@@ -182,7 +182,7 @@ const NavBar = () => {
               Our Team{" "}
             </NavLink>
 
-            {isAdmin.role === "Admin" ? (
+            {isAdmin?.role === "Admin" ? (
               <NavLink
                 to="/admin/orderList"
                 onClick={() => setIsOpen(!isOpen)}

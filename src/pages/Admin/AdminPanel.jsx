@@ -12,9 +12,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, Outlet } from "react-router-dom";
 import { useState } from "react";
+import useAdmin from "../../customHooks/useAdmin";
 
 const AdminPanel = () => {
-  const isAdmin = true;
+  const [isAdmin] = useAdmin();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,7 +28,7 @@ const AdminPanel = () => {
 
         <div className="my-20 w-8/12 mx-auto">
           <div className="flex flex-col items-start justify-center space-y-6">
-            {isAdmin ? (
+            {isAdmin?.role === "Admin" ? (
               <>
                 <NavLink to="/">
                   <FontAwesomeIcon icon={faHome} />
