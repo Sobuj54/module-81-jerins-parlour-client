@@ -55,7 +55,14 @@ const ManageServices = () => {
                     <FontAwesomeIcon icon={faPenToSquare} />
                   </button>
                   <div className="absolute top-16 left-0 right-16 bottom-16">
-                    {isModalOpen ? <Modal service={service}></Modal> : <></>}
+                    {isModalOpen ? (
+                      <Modal
+                        service={service}
+                        isModalOpen={isModalOpen}
+                        setIsModalOpen={setIsModalOpen}></Modal>
+                    ) : (
+                      <></>
+                    )}
                   </div>
                 </td>
                 <td className="p-3 font-semibold border border-l-0  border-black/50">

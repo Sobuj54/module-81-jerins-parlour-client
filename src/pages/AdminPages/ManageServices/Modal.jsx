@@ -1,7 +1,9 @@
+import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useForm } from "react-hook-form";
 
-const Modal = ({ service }) => {
-  const { _id, img, price, title, description } = service;
+const Modal = ({ service, setIsModalOpen, isModalOpen }) => {
+  const { price, title, description } = service;
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
@@ -9,7 +11,12 @@ const Modal = ({ service }) => {
   };
 
   return (
-    <div className="bg-slate-300 w-full h-auto p-10 rounded-lg">
+    <div className="bg-slate-300 relative w-full h-auto p-10 rounded-lg">
+      <button
+        onClick={() => setIsModalOpen(!isModalOpen)}
+        className="absolute top-0 right-0 w-8 h-8 text-white bg-red-500 rounded-full">
+        <FontAwesomeIcon icon={faCircleXmark} className="" />
+      </button>
       <h2 className="text-2xl font-semibold text-center mb-10">
         Update <span className="text-emerald-600">{title}</span>{" "}
       </h2>
@@ -43,6 +50,7 @@ const Modal = ({ service }) => {
                   type="number"
                   {...register("price")}
                   required
+                  defaultValue={price}
                   placeholder="Enter Service Price"
                   className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
                 />
@@ -74,6 +82,7 @@ const Modal = ({ service }) => {
                 <textarea
                   {...register("description")}
                   required
+                  defaultValue={description}
                   placeholder="Write Service Description"
                   className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md resize-y focus:outline-none focus:border-blue-600 caret-blue-600"
                   rows="4"></textarea>
