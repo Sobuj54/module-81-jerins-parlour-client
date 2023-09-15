@@ -1,4 +1,4 @@
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import "./NavBar.css";
 import { useState } from "react";
@@ -8,6 +8,7 @@ import useAdmin from "../../customHooks/useAdmin";
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isAdmin] = useAdmin();
+  const location = useLocation();
 
   const { user, logOut } = useAuthContext();
   const navigate = useNavigate();
@@ -106,6 +107,7 @@ const NavBar = () => {
             {isAdmin?.role === "Admin" ? (
               <NavLink
                 to="/admin/orderList"
+                state={{ from: location }}
                 className={`text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
                   isActive,
                 }) => (isActive ? "active" : "")}`}>
@@ -115,6 +117,7 @@ const NavBar = () => {
             ) : (
               <NavLink
                 to="/admin/bookingList"
+                state={{ from: location }}
                 className={`text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
                   isActive,
                 }) => (isActive ? "active" : "")}`}>
@@ -185,6 +188,7 @@ const NavBar = () => {
             {isAdmin?.role === "Admin" ? (
               <NavLink
                 to="/admin/orderList"
+                state={{ from: location }}
                 onClick={() => setIsOpen(!isOpen)}
                 className={`text-base text-center font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
                   isActive,
@@ -195,6 +199,7 @@ const NavBar = () => {
             ) : (
               <NavLink
                 to="/admin/bookingList"
+                state={{ from: location }}
                 onClick={() => setIsOpen(!isOpen)}
                 className={`text-base text-center font-semibold text-black transition-all duration-200 hover:text-opacity-80 ${({
                   isActive,

@@ -4,12 +4,7 @@ import Footer from "../../components/Footer/Footer";
 import HeroSection from "../../components/HeroSection/HeroSection";
 import MidHero from "../../components/MidHero/MidHero";
 import SampleServices from "../../components/Services/SampleServices";
-import { Suspense, lazy } from "react";
-// import Testimonials from "../../components/Testimonials/Testimonials";
-
-const Testimonials = lazy(() =>
-  import("../../components/Testimonials/Testimonials.jsx")
-);
+import Testimonials from "../../components/Testimonials/Testimonials";
 
 const Home = () => {
   return (
@@ -22,9 +17,9 @@ const Home = () => {
       <HeroSection></HeroSection>
       <SampleServices></SampleServices>
       <MidHero></MidHero>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Testimonials></Testimonials>
-      </Suspense>
+
+      <Testimonials></Testimonials>
+
       <Contact></Contact>
       <Footer></Footer>
     </>

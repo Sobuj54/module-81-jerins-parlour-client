@@ -15,6 +15,7 @@ import ErrorPage from "../../pages/ErrorPage/ErrorPage";
 import AddService from "../../pages/AdminPages/AddService/AddService";
 import MakeAdmin from "../../pages/AdminPages/MakeAdmin/MakeAdmin";
 import AdminRoute from "../Routes/AdminRoute";
+import ManageServices from "../../pages/AdminPages/ManageServices/ManageServices";
 
 const Router = createBrowserRouter([
   {
@@ -88,6 +89,14 @@ const Router = createBrowserRouter([
         element: (
           <AdminRoute>
             <MakeAdmin></MakeAdmin>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "manageServices",
+        element: (
+          <AdminRoute>
+            <ManageServices></ManageServices>
           </AdminRoute>
         ),
       },

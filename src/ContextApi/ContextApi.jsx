@@ -63,7 +63,6 @@ const ContextApi = ({ children }) => {
       } else {
         localStorage.removeItem("token");
       }
-      
     });
     return () => {
       return unsubscribe();
