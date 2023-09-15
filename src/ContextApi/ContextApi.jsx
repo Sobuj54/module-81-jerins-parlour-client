@@ -63,6 +63,7 @@ const ContextApi = ({ children }) => {
       } else {
         localStorage.removeItem("token");
       }
+      
     });
     return () => {
       return unsubscribe();
@@ -70,6 +71,7 @@ const ContextApi = ({ children }) => {
   }, [auth]);
 
   const logOut = () => {
+    setLoading(true);
     return signOut(auth);
   };
 

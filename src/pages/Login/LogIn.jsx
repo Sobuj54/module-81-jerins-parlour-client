@@ -7,6 +7,7 @@ import axios from "axios";
 const LogIn = () => {
   const { googleSignIn, signIn, facebookSignIn } = useAuthContext();
   const { register, handleSubmit } = useForm();
+
   const navigate = useNavigate();
   const location = useLocation();
   // console.log(location);
@@ -35,7 +36,9 @@ const LogIn = () => {
           .then((res) => {
             // console.log(res.data);
             if (res.data.insertedId) {
-              navigate(from);
+              navigate("/");
+            } else {
+              navigate("/");
             }
           });
       })
