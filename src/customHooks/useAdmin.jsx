@@ -3,7 +3,7 @@ import useAuthContext from "./useAuthContext";
 import useAxiosSecure from "./useAxiosSecure";
 
 const useAdmin = () => {
-  const { user, loading } = useAuthContext();
+  const { user, axiosLoading } = useAuthContext();
   const [axiosSecure] = useAxiosSecure();
 
   const { data: isAdmin, isLoading: isAdminLoading } = useQuery({
@@ -14,7 +14,7 @@ const useAdmin = () => {
       //   console.log(res.data);
       return res.data;
     },
-    enabled: !loading,
+    enabled: !axiosLoading,
   });
 
   return [isAdmin, isAdminLoading];

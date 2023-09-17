@@ -21,24 +21,29 @@ const ContextApi = ({ children }) => {
   const facebookProvider = new FacebookAuthProvider();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [axiosLoading, setAxiosLoading] = useState(true);
 
   const createUser = (email, password) => {
     setLoading(true);
+    setAxiosLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const signIn = (email, password) => {
     setLoading(true);
+    setAxiosLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   const googleSignIn = () => {
     setLoading(true);
+    setAxiosLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
 
   const facebookSignIn = () => {
     setLoading(true);
+    setAxiosLoading(true);
     return signInWithPopup(auth, facebookProvider);
   };
 
@@ -58,11 +63,12 @@ const ContextApi = ({ children }) => {
           .then((res) => {
             // console.log(res.data);
             localStorage.setItem("token", res.data.token);
-            setLoading(false);
+            setAxiosLoading(false);
           });
       } else {
         localStorage.removeItem("token");
       }
+      setLoading(false);
     });
     return () => {
       return unsubscribe();
@@ -71,6 +77,7 @@ const ContextApi = ({ children }) => {
 
   const logOut = () => {
     setLoading(true);
+    setAxiosLoading(true);
     return signOut(auth);
   };
 
@@ -83,6 +90,7 @@ const ContextApi = ({ children }) => {
     googleSignIn,
     facebookSignIn,
     loading,
+    axiosLoading,
   };
 
   return (
