@@ -1,25 +1,66 @@
 import { faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Modal from "./Modal";
 import { Helmet } from "react-helmet-async";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 
 const ManageServices = () => {
-  const [services, setServices] = useState([]);
+  // const [services, setServices] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalId, setModalId] = useState(null);
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/services?limit=0`)
-      .then((res) => res.json())
-      .then((data) => {
-        setServices(data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch(`http://localhost:5000/services?limit=0`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setServices(data);
+  //     });
+  // }, []);
+
+  const { data: services = [], refetch } = useQuery({
+    queryKey: ["allServices"],
+    queryFn: async () => {
+      const res = await axios.get(`http://localhost:5000/services?limit=0`);
+      return res.data;
+    },
+  });
 
   const handleModalOpen = (id) => {
     setIsModalOpen(!isModalOpen);
     setModalId(id);
+  };
+
+  // delete a service
+  const handleDeleteService = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios.delete(`http://localhost:5000/services/${id}`).then((res) => {
+          if (res.data.deletedCount > 0) {
+            refetch();
+            toast.success("Successfully deleted the service !", {
+              position: toast.POSITION.TOP_CENTER,
+            });
+          } else {
+            toast.error("Couldn't delete the Service !", {
+              position: toast.POSITION.TOP_CENTER,
+            });
+          }
+        });
+      }
+    });
   };
 
   return (
@@ -61,7 +102,9 @@ const ManageServices = () => {
                   </button>
                 </td>
                 <td className="p-3 font-semibold border border-l-0  border-black/50">
-                  <button className="bg-red-500 px-2 sm:px-4 py-1 sm:py-3 rounded-lg text-white">
+                  <button
+                    onClick={() => handleDeleteService(service._id)}
+                    className="bg-red-500 px-2 sm:px-4 py-1 sm:py-3 rounded-lg text-white">
                     <FontAwesomeIcon icon={faTrash} />
                   </button>
                 </td>
@@ -82,6 +125,7 @@ const ManageServices = () => {
           <></>
         )}
       </div>
+      <ToastContainer />
     </div>
   );
 };
