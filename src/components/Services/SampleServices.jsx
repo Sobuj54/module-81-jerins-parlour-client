@@ -28,7 +28,7 @@ const SampleServices = () => {
                 <img
                   src={service.img}
                   alt={service.title}
-                  className="rounded-lg"
+                  className="rounded-lg h-56 w-full object-cover"
                 />
                 <h3 className="text-xl md:text-3xl font-semibold mt-3 font-sans">
                   {service.title}

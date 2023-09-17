@@ -1,13 +1,48 @@
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "axios";
 import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import useAxiosSecure from "../../../customHooks/useAxiosSecure";
+import { useEffect, useState } from "react";
 
-const Modal = ({ service, setIsModalOpen, isModalOpen }) => {
-  const { price, title, description } = service;
+const Modal = ({ id, setIsModalOpen, isModalOpen }) => {
+  const [service, setService] = useState([]);
+  const [axiosSecure] = useAxiosSecure();
+
+  useEffect(() => {
+    axiosSecure.get(`/services/${id}`).then((res) => {
+      setService(res.data);
+    });
+  }, [axiosSecure, id]);
+
+  const { title, price, description } = service;
+
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
+    const { title, price, description } = data;
+
+    axios
+      .patch(`http://localhost:5000/services/${id}`, {
+        title,
+        price,
+        description,
+      })
+      .then((res) => {
+        // console.log(res.data);
+        if (res.data.modifiedCount > 0) {
+          toast.success("Update Successful !", {
+            position: toast.POSITION.TOP_CENTER,
+          });
+        } else {
+          toast.error("Couldn't update the Service !", {
+            position: toast.POSITION.TOP_CENTER,
+          });
+        }
+      });
   };
 
   return (
@@ -15,7 +50,7 @@ const Modal = ({ service, setIsModalOpen, isModalOpen }) => {
       <button
         onClick={() => setIsModalOpen(!isModalOpen)}
         className="absolute top-0 right-0 w-8 h-8 text-white bg-red-500 rounded-full">
-        <FontAwesomeIcon icon={faCircleXmark} className="" />
+        <FontAwesomeIcon icon={faCircleXmark} />
       </button>
       <h2 className="text-2xl font-semibold text-center mb-10">
         Update <span className="text-emerald-600">{title}</span>{" "}
@@ -31,10 +66,9 @@ const Modal = ({ service, setIsModalOpen, isModalOpen }) => {
               <div className="mt-2.5 relative">
                 <input
                   type="text"
-                  {...register("title")}
                   required
                   defaultValue={title}
-                  placeholder="Enter Service Title"
+                  {...register("title")}
                   className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
                 />
               </div>
@@ -48,16 +82,15 @@ const Modal = ({ service, setIsModalOpen, isModalOpen }) => {
               <div className="mt-2.5 relative">
                 <input
                   type="number"
-                  {...register("price")}
                   required
                   defaultValue={price}
-                  placeholder="Enter Service Price"
+                  {...register("price")}
                   className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
                 />
               </div>
             </div>
 
-            <div className="sm:col-span-2">
+            {/* <div className="sm:col-span-2">
               <label className="text-base font-medium text-gray-900">
                 {" "}
                 Image{" "}
@@ -71,7 +104,7 @@ const Modal = ({ service, setIsModalOpen, isModalOpen }) => {
                   className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
                 />
               </div>
-            </div>
+            </div> */}
 
             <div className="sm:col-span-2">
               <label className="text-base font-medium text-gray-900">
@@ -80,10 +113,9 @@ const Modal = ({ service, setIsModalOpen, isModalOpen }) => {
               </label>
               <div className="mt-2.5 relative">
                 <textarea
-                  {...register("description")}
                   required
                   defaultValue={description}
-                  placeholder="Write Service Description"
+                  {...register("description")}
                   className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md resize-y focus:outline-none focus:border-blue-600 caret-blue-600"
                   rows="4"></textarea>
               </div>
@@ -99,6 +131,7 @@ const Modal = ({ service, setIsModalOpen, isModalOpen }) => {
           </div>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

@@ -7,15 +7,20 @@ import { Helmet } from "react-helmet-async";
 const ManageServices = () => {
   const [services, setServices] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalId, setModalId] = useState(null);
 
   useEffect(() => {
     fetch(`http://localhost:5000/services?limit=0`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setServices(data);
       });
   }, []);
+
+  const handleModalOpen = (id) => {
+    setIsModalOpen(!isModalOpen);
+    setModalId(id);
+  };
 
   return (
     <div>
@@ -50,23 +55,13 @@ const ManageServices = () => {
                 </td>
                 <td className="p-3 font-semibold border border-r-0 border-l-0 border-black/50">
                   <button
-                    onClick={() => setIsModalOpen(!isModalOpen)}
-                    className="bg-green-500 px-4 py-3 rounded-lg text-white">
+                    onClick={() => handleModalOpen(service._id)}
+                    className="bg-green-500 px-2 sm:px-4 py-1 sm:py-3 rounded-lg text-white">
                     <FontAwesomeIcon icon={faPenToSquare} />
                   </button>
-                  <div className="absolute top-16 left-0 right-16 bottom-16">
-                    {isModalOpen ? (
-                      <Modal
-                        service={service}
-                        isModalOpen={isModalOpen}
-                        setIsModalOpen={setIsModalOpen}></Modal>
-                    ) : (
-                      <></>
-                    )}
-                  </div>
                 </td>
                 <td className="p-3 font-semibold border border-l-0  border-black/50">
-                  <button className="bg-red-500 px-4 py-3 rounded-lg text-white">
+                  <button className="bg-red-500 px-2 sm:px-4 py-1 sm:py-3 rounded-lg text-white">
                     <FontAwesomeIcon icon={faTrash} />
                   </button>
                 </td>
@@ -74,6 +69,18 @@ const ManageServices = () => {
             ))}
           </tbody>
         </table>
+      </div>
+      <div>
+        {isModalOpen ? (
+          <div className="fixed top-2 md:top-20 left-6 md:left-20 right-6 md:right-20 bottom-0 md:bottom-16">
+            <Modal
+              id={modalId}
+              isModalOpen={isModalOpen}
+              setIsModalOpen={setIsModalOpen}></Modal>
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );
