@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt, faUserShield } from "@fortawesome/free-solid-svg-icons";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 
 const MakeAdmin = () => {
   const [axiosSecure] = useAxiosSecure();
@@ -33,6 +34,35 @@ const MakeAdmin = () => {
             position: toast.POSITION.TOP_CENTER,
           });
         }
+      }
+    });
+  };
+
+  // delete user
+  const handleDeleteUser = (name) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/users/admin/${name}`).then((res) => {
+          console.log(res.data);
+          if (res.data.deletedCount > 0) {
+            refetch();
+            toast.success("Successfully deleted the User !", {
+              position: toast.POSITION.TOP_CENTER,
+            });
+          } else {
+            toast.error("Couldn't delete the User !", {
+              position: toast.POSITION.TOP_CENTER,
+            });
+          }
+        });
       }
     });
   };
@@ -88,7 +118,9 @@ const MakeAdmin = () => {
                   )}
                 </td>
                 <td className="p-3 font-semibold ">
-                  <button className="bg-red-400 text-white px-4 py-3 rounded-lg">
+                  <button
+                    onClick={() => handleDeleteUser(user?.name)}
+                    className="bg-red-400 text-white px-4 py-3 rounded-lg">
                     {" "}
                     <FontAwesomeIcon icon={faTrashAlt} />{" "}
                   </button>
