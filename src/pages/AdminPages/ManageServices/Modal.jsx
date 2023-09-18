@@ -26,7 +26,7 @@ const Modal = ({ id, setIsModalOpen, isModalOpen }) => {
     const { title, price, description } = data;
 
     axios
-      .patch(`http://localhost:5000/services/${id}`, {
+      .patch(`https://jerins-parlour-server-three.vercel.app/services/${id}`, {
         title,
         price,
         description,

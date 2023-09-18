@@ -10,7 +10,7 @@ const BookingList = () => {
   // const [bookings, setBookings] = useState([]);
 
   // useEffect(() => {
-  //   fetch(`http://localhost:5000/bookings?email=${user?.email}`)
+  //   fetch(`https://jerins-parlour-server-three.vercel.app/bookings?email=${user?.email}`)
   //     .then((res) => res.json())
   //     .then((data) => {
   //       // console.log("data", data);

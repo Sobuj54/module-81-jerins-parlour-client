@@ -56,10 +56,12 @@ const ContextApi = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log(currentUser);
+      // console.log(currentUser);
       if (currentUser) {
         axios
-          .post("http://localhost:5000/jwt", { email: currentUser?.email })
+          .post("https://jerins-parlour-server-three.vercel.app/jwt", {
+            email: currentUser?.email,
+          })
           .then((res) => {
             // console.log(res.data);
             localStorage.setItem("token", res.data.token);

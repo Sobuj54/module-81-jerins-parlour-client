@@ -15,7 +15,7 @@ const ManageServices = () => {
   const [modalId, setModalId] = useState(null);
 
   // useEffect(() => {
-  //   fetch(`http://localhost:5000/services?limit=0`)
+  //   fetch(`https://jerins-parlour-server-three.vercel.app/services?limit=0`)
   //     .then((res) => res.json())
   //     .then((data) => {
   //       setServices(data);
@@ -25,7 +25,9 @@ const ManageServices = () => {
   const { data: services = [], refetch } = useQuery({
     queryKey: ["allServices"],
     queryFn: async () => {
-      const res = await axios.get(`http://localhost:5000/services?limit=0`);
+      const res = await axios.get(
+        `https://jerins-parlour-server-three.vercel.app/services?limit=0`
+      );
       return res.data;
     },
   });
@@ -47,18 +49,22 @@ const ManageServices = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:5000/services/${id}`).then((res) => {
-          if (res.data.deletedCount > 0) {
-            refetch();
-            toast.success("Successfully deleted the service !", {
-              position: toast.POSITION.TOP_CENTER,
-            });
-          } else {
-            toast.error("Couldn't delete the Service !", {
-              position: toast.POSITION.TOP_CENTER,
-            });
-          }
-        });
+        axios
+          .delete(
+            `https://jerins-parlour-server-three.vercel.app/services/${id}`
+          )
+          .then((res) => {
+            if (res.data.deletedCount > 0) {
+              refetch();
+              toast.success("Successfully deleted the service !", {
+                position: toast.POSITION.TOP_CENTER,
+              });
+            } else {
+              toast.error("Couldn't delete the Service !", {
+                position: toast.POSITION.TOP_CENTER,
+              });
+            }
+          });
       }
     });
   };

@@ -11,7 +11,7 @@ const Services = () => {
   const location = useLocation();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services?limit=0`)
+    fetch(`https://jerins-parlour-server-three.vercel.app/services?limit=0`)
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
@@ -31,7 +31,7 @@ const Services = () => {
       isPaid: false,
     };
 
-    fetch("http://localhost:5000/bookings", {
+    fetch("https://jerins-parlour-server-three.vercel.app/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -22,7 +22,10 @@ const SignUp = () => {
 
         // post the new user
         axios
-          .post("http://localhost:5000/users", { name, email })
+          .post("https://jerins-parlour-server-three.vercel.app/users", {
+            name,
+            email,
+          })
           .then((res) => {
             // console.log(res.data);
             if (res.data.insertedId) {
@@ -41,7 +44,10 @@ const SignUp = () => {
 
         // post the new user
         axios
-          .post("http://localhost:5000/users", { name: displayName, email })
+          .post("https://jerins-parlour-server-three.vercel.app/users", {
+            name: displayName,
+            email,
+          })
           .then((res) => {
             // console.log(res.data);
             if (res.data.insertedId) {

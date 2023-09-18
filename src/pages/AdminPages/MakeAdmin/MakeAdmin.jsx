@@ -21,7 +21,7 @@ const MakeAdmin = () => {
   //   this function both makes and removes admin role
   const handleMakeAdmin = (id, role, name) => {
     axiosSecure.patch(`/users/admin/${id}?role=${role}`).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       if (res.data.modifiedCount > 0) {
         refetch();
         if (role === "Admin") {
@@ -51,7 +51,7 @@ const MakeAdmin = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axiosSecure.delete(`/users/admin/${name}`).then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
           if (res.data.deletedCount > 0) {
             refetch();
             toast.success("Successfully deleted the User !", {
