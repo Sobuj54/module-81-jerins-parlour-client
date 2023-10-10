@@ -11,7 +11,7 @@ const SignUp = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     const { name, email, password } = data;
     createUser(email, password)
       .then(() => {
@@ -25,6 +25,7 @@ const SignUp = () => {
           .post("https://jerins-parlour-server-three.vercel.app/users", {
             name,
             email,
+            role: "user",
           })
           .then((res) => {
             // console.log(res.data);
@@ -47,6 +48,7 @@ const SignUp = () => {
           .post("https://jerins-parlour-server-three.vercel.app/users", {
             name: displayName,
             email,
+            role: "user",
           })
           .then((res) => {
             // console.log(res.data);

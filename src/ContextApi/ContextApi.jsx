@@ -1,6 +1,5 @@
 import { createContext, useEffect, useState } from "react";
 import {
-  FacebookAuthProvider,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
@@ -18,7 +17,6 @@ export const AuthContext = createContext(null);
 const ContextApi = ({ children }) => {
   const auth = getAuth(app);
   const googleProvider = new GoogleAuthProvider();
-  const facebookProvider = new FacebookAuthProvider();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [axiosLoading, setAxiosLoading] = useState(true);
@@ -39,12 +37,6 @@ const ContextApi = ({ children }) => {
     setLoading(true);
     setAxiosLoading(true);
     return signInWithPopup(auth, googleProvider);
-  };
-
-  const facebookSignIn = () => {
-    setLoading(true);
-    setAxiosLoading(true);
-    return signInWithPopup(auth, facebookProvider);
   };
 
   const updateUserProfile = (name) => {
@@ -90,7 +82,7 @@ const ContextApi = ({ children }) => {
     updateUserProfile,
     logOut,
     googleSignIn,
-    facebookSignIn,
+
     loading,
     axiosLoading,
   };

@@ -5,7 +5,7 @@ import useAxiosSecure from "../../customHooks/useAxiosSecure";
 import { Helmet } from "react-helmet-async";
 
 const BookingList = () => {
-  const { user, loading } = useAuthContext();
+  const { user, axiosLoading } = useAuthContext();
   const [axiosSecure] = useAxiosSecure();
   // const [bookings, setBookings] = useState([]);
 
@@ -20,7 +20,7 @@ const BookingList = () => {
 
   const { data: bookings = [] } = useQuery({
     queryKey: ["bookings"],
-    enabled: !loading,
+    enabled: !axiosLoading,
     queryFn: async () => {
       const res = await axiosSecure.get(`/bookings?email=${user?.email}`);
       return res.data;
